@@ -1,0 +1,8 @@
+const SERVER_PORT = 3013;
+const RECEPTOR_PORT = 3000;
+const API_URL = 'http://localhost:' + SERVER_PORT + '/presentations';
+const RECEPTOR_URL = 'http://localhost:' + SERVER_PORT + '/receptor';
+const PRESENTATION_MANAGER_URL = '../presentation-manager/index.html';
+const PRESENTATION_CONTROLLER_URL = '../presentation-controller/index.html';
+const IMPORT_URL = '../presentation-import/index.html';
+const GALLERY_URL = '../powerpoint/index.html';

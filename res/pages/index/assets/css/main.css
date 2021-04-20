@@ -1,0 +1,70 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.header {
+  background: #343A40;
+  color: #f5f5f5;
+  filter: drop-shadow(1px 4px 1px rgba(0, 0, 0, 0.1));
+  padding: 20px;
+  height: 75px;
+  z-index: 10;
+}
+
+.header div {
+  align-items: center;
+}
+
+.header svg {
+  font-size: 15pt;
+  margin-top: 7px;
+}
+
+.header span {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.header .see.active {
+  color: red;
+}
+
+.header #loading {
+  float: right;
+  text-align: end;
+  cursor: pointer;
+}
+
+.header #loading img {
+  width: 35px;
+}
+
+.header .powerpoint input {
+  position: absolute;
+  top: -100px;
+}
+
+#main {
+  margin: 0px;
+  padding: 0px;
+  box-shadow: inset 0em 1em 1em 0em rgba(0, 0, 0, 0.15);
+}
+
+#main #left-bar {
+  margin: 0px;
+  padding: 0px;
+  background: #fff;
+  box-shadow: inset 0em 4em 2em 0em rgba(0, 0, 0, 0.15);
+}
+
+#main #left-bar #categories {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#main #left-bar #presentation-list {
+  overflow-y: scroll;
+  height: calc(100vh - 133px);
+}

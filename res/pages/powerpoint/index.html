@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PowerPoint</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <input type="file" multiple>
+        <button id="send">Enviar</button>
+        <!-- <button id="close">Fechar projeção</button> -->
+    </nav>
+    <div id="gallery" class="row">
+        <div class="col-3"></div>
+        <div id="preview" class="col-6">
+            <div id="main-img">
+                <img src="">
+            </div>
+            <div id="commands">
+                <button class="btn btn-outline-success" id="prev"><</button>
+                <button class="btn btn-outline-success" id="next">></button>
+            </div>
+        </div>
+        <div class="col-3"></div>
+        <div id="thumbs" class="col-12"></div>
+
+    </div>
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+    <script src="../../cfg.js"></script>
+    <script src="../../lib.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/socket.io.js"></script>
+    <script src="../../request.js"></script>
+    <script src="src/controller.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>

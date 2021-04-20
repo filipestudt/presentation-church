@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+    padding: 0px;   
+    overflow: hidden; 
+}
+
+.slides {
+    overflow-y: scroll;
+    text-align: center;
+    background: rgba(231, 228, 221, 0.87);
+    height: calc(100vh - 38px);
+    display: flex;
+    flex-direction: column;
+
+    .valid {
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .active {
+        background: rgba(255, 255, 0, 0.288);
+    }
+}

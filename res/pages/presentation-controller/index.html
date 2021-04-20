@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Presentator</title>
+        <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>       
+        
+        <div class="nav-bar">
+            <button class="btn btn-outline-success" id="clear">Limpar</button>
+        </div>
+        
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="slides col-6"></div>
+            <div class="preview col-3"></div>
+        </div>
+
+        <script> 
+            if (typeof module === 'object') {
+                window.module = module; 
+                module = undefined;
+            } 
+        </script>
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/socket.io.js"></script>
+
+        <script src="lib/request.js"></script>
+        <script src="lib/lib.js"></script>
+
+        <script src="src/model/strophe.js"></script>
+
+        <script src="src/controller.js"></script>
+        <script src="src/view.js"></script>
+        
+        <script src="src/main.js"></script>
+    </body>
+</html>

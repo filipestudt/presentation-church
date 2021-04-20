@@ -1,0 +1,2 @@
+global.SERVER_PORT = 3013;
+global.RECEPTOR_PORT = 3000;

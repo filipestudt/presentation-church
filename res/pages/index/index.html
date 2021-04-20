@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Presentation Church</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="row">
+            <div class="col-5">
+                <span class="import" title="Novo">
+                    <i class="fa fa-plus-circle"></i>
+                </span>
+                <span class="edit2" title="Editar">
+                    <i class="fa fa-edit"></i>
+                </span>                             
+                <span class="remove" title="Excluir">
+                    <i class="fa fa-trash"></i>
+                </span>
+                <span class="presentate" title="Apresentar">
+                    <i class="fas fa-fw fa-desktop"></i>
+                </span>
+                <span class="refresh" title="Recarregar">
+                    <i class="fas fa-fw fa-sync"></i>
+                </span>                
+                <span class="favorite" title="Favoritar">
+                    <i class="fa fa-star"></i>
+                </span>
+                <!-- <span class="see">
+                    Ver
+                </span> -->
+                <!-- <span class="powerpoint">
+                        <button id="powerpoint">PowerPoint</button>
+                        <input type="file" accept=".pptx, .odp, .ppt, .pps" enctype="multipart/form-data">
+                    </span> -->                
+                (<span class="new" title="Novo 2.0">
+                    <i class="fa fa-plus-circle"></i>
+                </span>
+                <span class="edit" title="Editar 2.0">
+                    <i class="fa fa-edit"></i>
+                </span>)
+                <span class="gallery" title="Fazer uma apresentação de slides">
+                    PowerPoint
+                </span>
+            </div>
+            <div class="col-3">
+                <input type="text" id="search" class="form-control" placeholder="Pesquisar">
+            </div>
+            <div class="col-1">
+                <button class="btn btn-outline-success" id="btn-search">Buscar</button>
+            </div>
+            <div class="col-3" id="loading">
+
+            </div>
+            <!-- <div class="col-2">
+                    <input type="text" class="form-control" placeholder="Pesquisar">
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-outline-success">Buscar</button>
+                </div> -->
+        </div>
+    </header>
+
+
+    <!-- Main -->
+    <div id="main" class="row">
+
+        <div id="left-bar" class="col-3">
+
+            <select id="categories" class="form-control">
+                <option value="Hinos">Hinos</option>
+                <option value="HCC">HCC</option>
+                <option value="CC">CC</option>
+                <option value="Favoritos">Favoritos</option>
+            </select>
+
+            <span class="divider"></span>
+
+            <div id="presentation-list">
+                <span id="das" class="presentation list-group-item">
+                    asdas
+                </span>
+                <span id="32" class="presentation list-group-item">
+                    asdas
+                </span>
+            </div>
+
+        </div>
+
+        <div id="presentation-view" class="col-9">
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Scripts e dependências -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/all.js"></script>
+
+    <script src="src/cfg.js"></script>
+    <script src="lib/request.js"></script>
+
+    <script src="src/view/presentation-view.js"></script>
+    <script src="src/controller/presentation-controller.js"></script>
+
+    <script src="src/main.js"></script>
+</body>
+
+</html>
