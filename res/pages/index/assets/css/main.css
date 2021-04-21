@@ -2,6 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
+  background: #0e1015;
 }
 
 .header {
@@ -57,24 +58,31 @@ body {
   margin: 0px;
   padding: 0px;
   background: #181a20;
-  box-shadow: inset 0em 4em 2em 0em rgba(0, 0, 0, 0.15);
   color: white;
 }
 
 #main #left-bar #categories {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background: #181a20;
+  height: 50px;
+  background: #1b1d23;
   color: white;
+  border: none;
+  font-weight: 600;
+  margin-right: 0px;
 }
 
 #main #left-bar #presentation-list {
   overflow-y: scroll;
   height: calc(100vh - 133px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 #main #left-bar #presentation-list span {
   background: #181a20;
+}
+
+#main #left-bar #presentation-list .list-group-item.active {
+  border-color: #28a745;
 }
 
 #main #presentation-view {
@@ -88,6 +96,8 @@ body {
   max-width: 80px;
   min-width: 80px;
   height: 100vh;
+  margin-left: 0px;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +109,7 @@ body {
 
 #left-menu img {
   width: 30px;
-  margin: 15px;
+  margin-top: 15px;
 }
 
 /* width */
@@ -109,7 +119,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #0e1015;
+  background: #181a20;
 }
 
 /* Handle */

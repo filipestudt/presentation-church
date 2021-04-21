@@ -10,6 +10,7 @@ body {
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+    background: $background;
 }
 
 .header {
@@ -65,21 +66,29 @@ body {
         margin: 0px;
         padding: 0px;           
         background: $secondary;
-        box-shadow: inset 0em 4em 2em 0em rgba(0, 0, 0, 0.15);
+        //box-shadow: inset 0em 4em 2em 0em rgba(0, 0, 0, 0.15);
         color: $text;
         
         #categories {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            background: $secondary;    
+            height: 50px;
+            background: #1b1d23;    
             color: $text;  
+            border: none;
+            font-weight: 600;
+            margin-right: 0px;
         }
 
         #presentation-list {
             overflow-y: scroll;
             height: calc(100vh - 133px); // 75 + 38 - do tamanho do select + 20 dos margins top e bottom
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.65);
             span {
-                background: $secondary;
+                background: $secondary;                
+            }
+
+            .list-group-item.active {
+                border-color: #28a745;
             }
         }
     }
@@ -96,7 +105,8 @@ body {
     max-width: 80px;
     min-width: 80px;
     height: 100vh;
-    //height: 75px;
+    margin-left: 0px;
+    left: 0;
 
     display: flex;
     flex-direction: column;
@@ -110,7 +120,7 @@ body {
 
     img {
         width: 30px;
-        margin: 15px;
+        margin-top: 15px;
     }
 
     .settings {
@@ -124,7 +134,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: $background;
+    background: $secondary;
 }
 
 /* Handle */
