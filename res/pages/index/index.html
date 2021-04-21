@@ -11,77 +11,84 @@
 
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="row">
-            <div class="col-3">
-                <input type="text" id="search" class="form-control" placeholder="Pesquisar">
-            </div>
-            <div class="col-1">
-                <button class="btn btn-outline-success" id="btn-search">Buscar</button>
-            </div>
-            <div class="col-3">
-                
-            </div>
-            <div class="col-5" id="loading">
-
-            </div>
-        </div>
-    </header>
+    
 
 
     <!-- Main -->
-    <div id="main" class="row">
-        <div id="left-menu">
-            <span class="import" title="Novo">
-                <!-- <i class="fa fa-plus-circle"></i> -->
-                <img src="assets/img/add-circle-line.svg">
-            </span>
-            <span class="edit2" title="Editar">
-                <img src="assets/img/edit-line.svg">
-            </span>                             
-            <span class="remove" title="Excluir">
-                <img src="assets/img/delete-bin-line.svg">
-            </span>
-            <span class="presentate" title="Apresentar">
-                <img src="assets/img/projector-2-line.svg">
-            </span>
-            <span class="refresh" title="Recarregar">
-                <img src="assets/img/refresh-line.svg">
-            </span>                
-            <span class="favorite" title="Favoritar">
-                <img src="assets/img/star-line.svg">
-            </span>
-            <span class="gallery" title="Fazer uma apresentação de slides">
-                <img src="assets/img/slideshow-line.svg">
-            </span>
-        </div>
-
-        <div id="left-bar" class="col-3">
-
-            <select id="categories" class="form-control">
-                <option value="Hinos">Hinos</option>
-                <option value="HCC">HCC</option>
-                <option value="CC">CC</option>
-                <option value="Favoritos">Favoritos</option>
-            </select>
-
-            <span class="divider"></span>
-
-            <div id="presentation-list">
-                <span id="das" class="presentation list-group-item">
-                    asdas
+    <div id="main">
+        <div class="row">
+            <div id="left-menu" class="col-1">
+                <span class="import" title="Novo">
+                    <!-- <i class="fa fa-plus-circle"></i> -->
+                    <img src="assets/img/add-circle-line.svg">
                 </span>
-                <span id="32" class="presentation list-group-item">
-                    asdas
+                <span class="edit2" title="Editar">
+                    <img src="assets/img/edit-line.svg">
+                </span>                             
+                <span class="remove" title="Excluir">
+                    <img src="assets/img/delete-bin-line.svg">
+                </span>
+                <span class="presentate" title="Apresentar">
+                    <img src="assets/img/projector-2-line.svg">
+                </span>
+                <span class="refresh" title="Recarregar">
+                    <img src="assets/img/refresh-line.svg">
+                </span>                
+                <span class="favorite" title="Favoritar">
+                    <img src="assets/img/star-line.svg">
+                </span>
+                <span class="gallery" title="Fazer uma apresentação de slides">
+                    <img src="assets/img/slideshow-line.svg">
+                </span>
+                <span class="settings" title="Configurações">
+                    <img src="assets/img/settings-3-line.svg">
                 </span>
             </div>
+            <!-- Cabeçalho -->
+            <header class="header col-11">
+                <div class="row">
+                    <div class="col-3">
+                        <input type="text" id="search" class="form-control" placeholder="Pesquisar">
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-outline-success" id="btn-search">Buscar</button>
+                    </div>
+                    <div class="col-3">
+                        
+                    </div>
+                    <div class="col-5" id="loading">
 
+                    </div>
+                </div>
+            </header>
         </div>
 
-        <div id="presentation-view" class="col-7">
+        <div class="row">
+            <div class="col-2"></div>
 
+            <div id="left-bar" class="col-3">
+                <select id="categories" class="form-control">
+                    <option value="Hinos">Hinos</option>
+                    <option value="HCC">HCC</option>
+                    <option value="CC">CC</option>
+                    <option value="Favoritos">Favoritos</option>
+                </select>
+                <span class="divider"></span>
+                <div id="presentation-list">
+                    <span id="das" class="presentation list-group-item">
+                        asdas
+                    </span>
+                    <span id="32" class="presentation list-group-item">
+                        asdas
+                    </span>
+                </div>
+            </div>
+
+            <div id="presentation-view" class="col-5"></div>
+
+            <div class="col-2"></div>
         </div>
+
     </div>
 
 

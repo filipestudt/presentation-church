@@ -52,9 +52,7 @@ body {
 
     #btn-search {
         margin-left: 100px;
-    }
-
-    
+    }    
 }
 
 #main {
@@ -65,8 +63,7 @@ body {
 
     #left-bar {
         margin: 0px;
-        padding: 0px;   
-        margin-left: 120px;     
+        padding: 0px;           
         background: $secondary;
         box-shadow: inset 0em 4em 2em 0em rgba(0, 0, 0, 0.15);
         color: $text;
@@ -89,22 +86,22 @@ body {
 
     #presentation-view {
         background: $secondary;
-        margin-left: 20px;
+        margin-left: 60px;
     }
 }
 
 #left-menu {
     position: absolute;
     z-index: 100;
+    max-width: 80px;
+    min-width: 80px;
     height: 100vh;
-    left: 0;
-    top: 0;
+    //height: 75px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
-    max-width: 80px;
+  
     background-color: $primary;
     padding: 20px;
 
@@ -112,8 +109,31 @@ body {
     border-right-color: rgba(255, 255, 255, 0.08);
 
     img {
-        width: 35px;
+        width: 30px;
         margin: 15px;
+    }
+
+    .settings {
     }
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
