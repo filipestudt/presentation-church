@@ -66,6 +66,11 @@ function PresentationView() {
         $('.presentation').removeClass('active')
     }
 
+    var selectMenuItem = function(e) {
+        $('#left-menu span').removeClass('active');
+        $(e).addClass('active');
+    }
+
     var setView = async function(id) {
         /**
          * Busca a apresentação através do seu id
@@ -215,6 +220,10 @@ function PresentationView() {
      */
     $(document).on('click', '.presentation', function() {
         select(this);
+    })
+
+    $(document).on('click', '#left-menu span', function() {
+        selectMenuItem(this);
     })
 
     // Recebe uma mensagem do manager pra recarregar a página quando uma nova apresentação tiver sido

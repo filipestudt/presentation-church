@@ -54,8 +54,9 @@ body {
         flex-direction: row;
         align-items: center;
 
-        img {
+        svg {
             margin: 10px;
+            fill: #7e828b;
         }
 
         #search {
@@ -157,7 +158,8 @@ body {
     }
 
     #logo {
-        img {
+        svg {
+            fill: #28a745;
             margin-top: 5px;
             margin-bottom: 20px;
         }
@@ -177,6 +179,17 @@ body {
     img {
         width: 30px;
         margin-top: 15px;
+    }
+
+    svg {
+        fill: #7e828b;
+        margin-top: 20px;
+    }
+
+    span.active svg {
+        //fill: #adafb4;
+        //fill: #cccdd1;
+        fill: #e2e3e7;
     }
 }
 

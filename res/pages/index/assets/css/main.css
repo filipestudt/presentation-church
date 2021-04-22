@@ -45,8 +45,9 @@ body {
   align-items: center;
 }
 
-.header #search-container img {
+.header #search-container svg {
   margin: 10px;
+  fill: #7e828b;
 }
 
 .header #search-container #search {
@@ -141,7 +142,8 @@ body {
   height: 80%;
 }
 
-#left-menu #logo img {
+#left-menu #logo svg {
+  fill: #28a745;
   margin-top: 5px;
   margin-bottom: 20px;
 }
@@ -160,6 +162,15 @@ body {
 #left-menu img {
   width: 30px;
   margin-top: 15px;
+}
+
+#left-menu svg {
+  fill: #7e828b;
+  margin-top: 20px;
+}
+
+#left-menu span.active svg {
+  fill: #e2e3e7;
 }
 
 /* width */
