@@ -9,8 +9,17 @@ new PresentationView();
 var receptorIp;
 
 async function connectToReceptor() {
-    $('#loading').html('Conectando... <img src="assets/img/loading-gif-png-5.gif">')
+    //$('#loading').html('Conectando... <img src="assets/img/loading-gif-png-5.gif">')
+    $('#loading').html('Conectando... <img style="width: 42px;" src="assets/img/animation_200_knsyj8ts.gif">')
     $('#loading').attr('Title', 'Conectando-se ao receptor')
+
+    setTimeout(function() {
+        $('#loading').html('Conectando... <img style="width: 35px;" src="assets/img/animation_200_knsylo42.gif">');
+    }, 3000);
+
+    setTimeout(function() {
+        $('#loading').html('Conectado');
+    }, 4600)
 
     try {
         receptorIp = await requests.getReceptorIp();

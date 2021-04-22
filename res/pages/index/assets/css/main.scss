@@ -20,7 +20,19 @@ body {
     //padding-bottom: 10px;
     padding-top: 20px;
     height: 75px;
-    z-index: 10;   
+    z-index: 10;
+
+    .nav-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        svg {
+            fill: #7e828b;
+            margin-left: 10px;
+            
+        }
+    }
 
     svg {
         font-size: 15pt;
@@ -41,7 +53,7 @@ body {
         
         padding-right: 40px;
 
-        img {
+        img, svg {
             width: 35px;         
             margin-left: 10px;
         }
@@ -191,6 +203,20 @@ body {
         //fill: #cccdd1;
         fill: #e2e3e7;
     }
+}
+
+#iframe {
+    position: absolute;
+    margin-left: 80px;
+    left: 0;
+    width: calc(100vw - 80px);
+    height: calc(100vh - 78px);
+    border: none;
+    z-index: 200;
+}
+
+#iframe.hide{
+    display: none;
 }
 
 /* width */
