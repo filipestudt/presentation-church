@@ -137,13 +137,24 @@ body {
         }
     }
 
-    #presentation-view {
-        background: $secondary;
+    
+    #presentation-container {
         margin-left: 60px;
-        text-align: center;
-        font-size: 14pt;
-        color: rgba(255, 255, 255, 0.65);
-        padding-top: 20px;
+
+        #presentation-options {
+            height: 100px;
+            margin-bottom: 20px;
+            background: $secondary;
+        }
+
+        #presentation-view {
+            background: $secondary;            
+            text-align: center;
+            font-size: 14pt;
+            color: rgba(255, 255, 255, 0.65);
+            padding-top: 20px;
+            height: calc(100% - 120px);
+        }
     }
 }
 
