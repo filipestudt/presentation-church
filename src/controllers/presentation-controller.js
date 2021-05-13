@@ -64,7 +64,7 @@ exports.post = async(req, res, next) => {
             id: data.id
         });
 
-        res.status(200).send(response);
+        res.status(200).send(data.id);
     }
     catch (e) {
         res.status(500).send({

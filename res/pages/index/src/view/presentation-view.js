@@ -174,7 +174,7 @@ function PresentationView() {
         }
 
         //window.open(IMPORT_URL + '?id=' + id);
-        $('#iframe').attr('src', IMPORT_URL);
+        $('#iframe').attr('src', IMPORT_URL + '?id=' + id);
         $('#iframe').removeClass('hide');
     })
 

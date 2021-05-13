@@ -27,15 +27,15 @@ $('#save').click(async function() {
         catch(e) {
             alert(e.responseJSON.message);
         }
-    }
-
-    try {
-        await requestMaker.post(result);
-        window.opener.postMessage('saved', '*');
-        window.close();
-    }
-    catch(e) {
-        alert(e.responseJSON.message);
+    } else {
+        try {
+            id = await requestMaker.post(result);
+            window.opener.postMessage('saved', '*');
+            window.close();
+        }
+        catch(e) {
+            alert(e.responseJSON.message);
+        }
     }
 
 })
