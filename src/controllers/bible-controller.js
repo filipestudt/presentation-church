@@ -11,3 +11,25 @@ exports.get = async(req, res, next) => {
         });
     }
 }
+exports.getBooks = async(req, res, next) => {
+    try {
+        var data = await repository.getBooks();
+        res.status(200).send(data);
+    } 
+    catch (e) {
+        res.status(500).send({
+            message: 'Falha ao processar sua requisição'
+        });
+    }
+}
+exports.getChapters = async(req, res, next) => {
+    try {
+        var data = await repository.getChapters(req.params.book);
+        res.status(200).send(data);
+    } 
+    catch (e) {
+        res.status(500).send({
+            message: 'Falha ao processar sua requisição'
+        });
+    }
+}

@@ -14,3 +14,26 @@ exports.get = async(book, chapter) => {
 
     return response.chapters[chapter - 1];
 }
+
+exports.getBooks = async() => {
+    var abbrevs = await db.map('abbrev',).value();
+    var names = await db.map('name').value();
+    var result = [];
+    for (let i=0, len=abbrevs.length; i<len; i++) {
+        result.push({
+            abbrev: abbrevs[i],
+            name: names[i]
+        })
+    }
+    return result;
+}
+
+exports.getChapters = async(book) => {
+    var response = await db.find({abbrev: book}).value();
+
+    if (!response) {
+        throw 'Livro não encontrado'
+    }    
+
+    return {chapters: response.chapters.length};
+}
