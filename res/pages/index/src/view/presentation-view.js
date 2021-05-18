@@ -219,6 +219,11 @@ function PresentationView() {
         $('#iframe').removeClass('hide');
     })
 
+    $('.bible').click(function() {
+        $('#iframe').attr('src', BIBLE_URL + '?ip=' + receptorIp);
+        $('#iframe').removeClass('hide');
+    })
+
     $('#btn-search').click(async function() {
         let str = $('#search').val();
         let result = await controller.search(str.toLowerCase());

@@ -6,3 +6,4 @@ const PRESENTATION_MANAGER_URL = '../presentation-manager/index.html';
 const PRESENTATION_CONTROLLER_URL = '../presentation-controller/index.html';
 const IMPORT_URL = '../presentation-import/index.html';
 const GALLERY_URL = '../powerpoint/index.html';
+const BIBLE_URL = '../bible/index.html';

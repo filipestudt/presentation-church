@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 
 const presentationRoute = require('./routes/presentation-route');
 const receptorRoute = require('./routes/receptor-route');
+const bibleRoute = require('./routes/bible-route');
 
 app.use(bodyparser.json({limit: '10mb', extended: true}));
 app.use(bodyparser.urlencoded({limit: '10mb', extended: true}));
@@ -21,6 +22,7 @@ app.use(function (req, res, next) {
 
 app.use('/presentations', presentationRoute);
 app.use('/receptor', receptorRoute);
+app.use('/bible', bibleRoute);
 
 app.listen(SERVER_PORT, function () {
     console.log('Listening on port ' + SERVER_PORT + '!');
