@@ -224,6 +224,11 @@ function PresentationView() {
         $('#iframe').removeClass('hide');
     })
 
+    $('.settings').click(function() {
+        $('#iframe').attr('src', SETTINGS_URL + '?ip=' + receptorIp);
+        $('#iframe').removeClass('hide');
+    })
+
     $('#btn-search').click(async function() {
         let str = $('#search').val();
         let result = await controller.search(str.toLowerCase());

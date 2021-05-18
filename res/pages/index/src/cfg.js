@@ -7,3 +7,4 @@ const PRESENTATION_CONTROLLER_URL = '../presentation-controller/index.html';
 const IMPORT_URL = '../presentation-import/index.html';
 const GALLERY_URL = '../powerpoint/index.html';
 const BIBLE_URL = '../bible/index.html';
+const SETTINGS_URL = '../settings/index.html';
