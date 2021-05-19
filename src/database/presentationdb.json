@@ -43980,6 +43980,26 @@
             "Como nunca cantei\nVou louvar\nSanto é teu nome, pai",
             "Santo é teu nome, pai\nSanto é teu nome, pai"
           ]
+        },
+        {
+          "num": "2",
+          "slides": [
+            "Com minha alma e meu ser\nEu irei cantar\nSanto é teu nome, pai",
+            "Como nunca cantei\nVou louvar\nSanto é teu nome, pai",
+            "O sol raiou é um novo dia\nTua canção eu vou cantar",
+            "E seja o que for que comigo aconteça\nVou estar cantando quando o sol se por",
+            "Com minha alma e meu ser\nEu irei cantar\nSanto é teu nome, pai",
+            "Como nunca cantei\nVou louvar\nSanto é teu nome, pai",
+            "Um Deus de amor e misericórdia\nUm coração pronto a perdoar",
+            "Por tudo isso eu estarei cantando\nDez mil razões eu posso encontrar",
+            "Com minha alma e meu ser\nEu irei cantar\nSanto é teu nome, pai",
+            "Como nunca cantei\nVou louvar\nSanto é teu nome, pai",
+            "Eu sei que um dia estarei bem fraco\nAguardando minha hora chegar",
+            "Ainda assim eu estarei cantando\nPor dez mil anos e por muito mais",
+            "Com minha alma e meu ser\nEu irei cantar\nSanto é teu nome, pai",
+            "Como nunca cantei\nVou louvar\nSanto é teu nome, pai",
+            "Santo é teu nome, pai\nSanto é teu nome, pai"
+          ]
         }
       ],
       "id": "HmsBIxs3Y"
@@ -44199,31 +44219,6 @@
       "id": "VBiCBbd0t"
     },
     {
-      "name": "1 - Novo Hino2",
-      "category": "Hinos",
-      "content": [
-        {
-          "num": "1",
-          "slides": [
-            "ADsadsadsa\ndasdsad\nad"
-          ]
-        },
-        {
-          "num": "2",
-          "slides": [
-            "dasdas\n"
-          ]
-        },
-        {
-          "num": "3",
-          "slides": [
-            "dasdasd\ndasdasdasd\ndasdasdas\naaaa"
-          ]
-        }
-      ],
-      "id": "w2Nm_vlf-"
-    },
-    {
       "name": "1 - Novo Hino3",
       "category": "Hinos",
       "content": [
@@ -44415,6 +44410,28 @@
         }
       ],
       "id": "40WtuFJok"
+    },
+    {
+      "name": "A começar em mim",
+      "category": "Favoritos",
+      "content": [
+        {
+          "num": "1",
+          "slides": [
+            "A começar em mim, quebra corações ",
+            "Pra que sejamos todos um\nComo tu és em nós",
+            "A começar em mim, quebra corações ",
+            "Pra que sejamos todos um\nComo tu és em nós",
+            "Onde há frieza que haja amor",
+            "Onde há ódio, perdão",
+            "Para que teu corpo cresça sim",
+            "Rumo a perfeição",
+            "A começar em mim, quebra corações ",
+            "Pra que sejamos todos um\nComo tu és em nós"
+          ]
+        }
+      ],
+      "id": "jAV74Bz8f"
     }
   ]
 }

@@ -118,7 +118,7 @@ body {
 
         #presentation-list {
             overflow-y: scroll;
-            height: calc(100vh - 133px); // 75 + 38 - do tamanho do select + 20 dos margins top e bottom
+            height: calc(100vh - 133px); // 75 + 38 - do tamanho do select + 20 dos margins top e bottom            
             font-weight: 300;
             color: rgba(255, 255, 255, 0.65);
             cursor: default;
@@ -148,12 +148,15 @@ body {
         }
 
         #presentation-view {
-            background: $secondary;            
+            background: $secondary;     
+            overflow-y: scroll;            
             text-align: center;
             font-size: 14pt;
             color: rgba(255, 255, 255, 0.65);
+            padding: 50px;
             padding-top: 20px;
-            height: calc(100% - 120px);
+            height: calc(100vh - 100px - 100px);
+            max-height: calc(100% - 120px);
         }
     }
 }

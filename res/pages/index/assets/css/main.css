@@ -135,11 +135,14 @@ body {
 
 #main #presentation-container #presentation-view {
   background: #181a20;
+  overflow-y: scroll;
   text-align: center;
   font-size: 14pt;
   color: rgba(255, 255, 255, 0.65);
+  padding: 50px;
   padding-top: 20px;
-  height: calc(100% - 120px);
+  height: calc(100vh - 100px - 100px);
+  max-height: calc(100% - 120px);
 }
 
 #left-menu {
