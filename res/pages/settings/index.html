@@ -11,17 +11,12 @@
         <div class="container d-flex flex-column">
             <label>IP Fixo</label>
             <span class="hr"></span>
-            <div class="btn-toggle">a</div>
-            <input type="text" class="form-control input">
+            <div class="btn-toggle"></div>
+            <input type="text" id="ip" class="form-control input" placeholder="IP" disabled>
             
             <label>Tamanho da fonte</label>
             <span class="hr"></span>
-            <div class="range-input">
-                <input id="font-size" type="range" min="0" max="100" value="0" step="10">
-                <div class="value">
-                    <div></div>
-                </div>
-            </div>
+            <input id="font-size" class="form-control input" >
 
             <label>Estilo do texto</label>
             <span class="hr"></span>
@@ -50,7 +45,6 @@
         <script src="../../request.js"></script>
         <script src="../../get-url-params.js"></script>
         <script src="../../assets/js/socket.io.js"></script>
-        <script src="src/seekbar.js"></script>
         <script src="src/main.js"></script>
     </body>
 </html>

@@ -45,6 +45,10 @@ label {
     display: block;
     width: 50px;
     height: 50px;
+
+    svg {
+        width: 30px;
+    }
 }
 
 /* width */
@@ -66,43 +70,4 @@ label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
-
-.range-input {    
-    padding:10px 20px;
-    padding-left: 0px;
-    display:flex;
-    align-items:center;
-    border-radius:10px;
-}
-.range-input input {
-    -webkit-appearance:none;
-    width:200px;
-    height:2px;
-    background:$seekbar_color;
-    border:none;
-    outline:none;
-}
-.range-input input::-webkit-slider-thumb {
-    -webkit-appearance:none;
-    width:20px;
-    height:20px;
-    background:$seekbar_color;
-    border:2px solid $seekbar_color;
-    border-radius:50%;
-}
-.range-input input::-webkit-slider-thumb:hover {
-    background:$seekbar_color;
-}
-.range-input .value {
-    color:$seekbar_color;
-    text-align:center;
-    font-weight:600;
-    line-height:40px;
-    height:40px;
-    overflow:hidden;
-    margin-left:10px;
-}
-.range-input .value div {
-    transition:all 300ms ease-in-out;
 }
