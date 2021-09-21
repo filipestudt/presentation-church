@@ -141,9 +141,30 @@ body {
         margin-left: 60px;
 
         #presentation-options {
-            height: 100px;
-            margin-bottom: 20px;
+            height: 50px;
+            padding-top: 20px;
+            padding-bottom: 30px;
             background: $secondary;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+               
+            }
+
+            span {
+                color: rgba(255, 255, 255, 0.65);
+                margin: 20px;                
+                border-radius: 20px;
+                background-color: rgba(58, 58, 58, 0.65);
+                cursor: pointer;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 30px;
+            }
         }
 
         #presentation-view {
@@ -154,7 +175,7 @@ body {
             color: rgba(255, 255, 255, 0.65);
             padding: 50px;
             padding-top: 20px;
-            height: calc(100vh - 100px - 100px);
+            height: calc(100vh - 50px);
             max-height: calc(100% - 120px);
         }
     }
