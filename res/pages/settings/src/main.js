@@ -11,16 +11,32 @@ if (ip && ip != 'undefined') {
 try {
     data = JSON.parse(localStorage.getItem('config'));
 }
-catch(e) {}
+catch (e) { }
 
 if (data) {
     $('#font-size').val(data.fontSize || 60);
     $('.btn-toggle').html(data.staticIp ? svgOn : svgOff);
     $('.btn-toggle').addClass(data.staticIp ? 'on' : 'off');
-    $('#ip').attr('disabled', data.staticIp ? true : false);
+
+    if (data.staticIp) {
+        $('#ip').removeAttr('disabled');
+    } else {
+        $('#ip').attr('disabled', true);
+    }
+
+    $('#ip').val(data.ip);
+
+    if (data.staticIp && data.ip) {
+        receptorIp = data.ip;
+    }
+} else {
+    $('#font-size').val(60);
+    $('.btn-toggle').html(svgOff);
+    $('.btn-toggle').addClass('off');
+    $('#ip').attr('disabled', true);
 }
 
-$('.btn-toggle').click(function(e) {
+$('.btn-toggle').click(function (e) {
     if ($('.btn-toggle').hasClass('on')) {
         $('.btn-toggle').removeClass('on');
         $('.btn-toggle').addClass('off');
@@ -31,7 +47,25 @@ $('.btn-toggle').click(function(e) {
         $('.btn-toggle').removeClass('off');
         $('.btn-toggle').addClass('on');
         $('.btn-toggle').html(svgOn);
-        $('#ip').attr('disabled', false);
+        $('#ip').removeAttr('disabled');
+    }
+})
+
+$('#btn-save').click(function (e) {
+    let newData = {
+        fontSize: !isNaN($('#font-size').val()) ? $('#font-size').val() : 60,
+        staticIp: $('#ip').attr('disabled') ? false : true,
+        ip: $('#ip').val()
+    }
+
+    localStorage.setItem('config', JSON.stringify(newData));
+
+    if (newData.fontSize != data.fontSize) {
+        socket.emit('font-size', fontSize);
+    }
+
+    if (isNaN($('#font-size').val())) {
+        $('#font-size').val(data.fontSize || 60);
     }
 })
 
