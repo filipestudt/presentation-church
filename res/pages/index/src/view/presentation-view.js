@@ -13,16 +13,16 @@ function PresentationView() {
      * Carrega todas as apresentações e seta na tela
      * Usa o valor do select de categorias
      */
-    var load = async function() {
+    var load = async function () {
         let value = categoriesElement.val();
-        var data = await controller.load(value);  
+        var data = await controller.load(value);
         // Sort alphabetically
         data.sort((a, b) => a.name.localeCompare(b.name));
         // Carrega em tela 
         setPresentations(data);
     }
 
-    var setPresentations = function(data) {
+    var setPresentations = function (data) {
         /**
          * Limpa a view e a lista das apresentações
          */
@@ -35,11 +35,11 @@ function PresentationView() {
         }
     }
 
-    var getSelected = function() {
+    var getSelected = function () {
         return editElement.attr('id');
     }
 
-    var select = function(e) {
+    var select = function (e) {
         /*
          * Deseleciona o último elemento selecionado
          */
@@ -62,16 +62,16 @@ function PresentationView() {
         setView(id);
     }
 
-    var diselectAll = function() {
+    var diselectAll = function () {
         $('.presentation').removeClass('active')
     }
 
-    var selectMenuItem = function(e) {
-        $('#left-menu span').removeClass('active');
+    var selectMenuItem = function (e) {
+        $('#sidebar span').removeClass('active');
         $(e).addClass('active');
     }
 
-    var setView = async function(id) {
+    var setView = async function (id) {
         /**
          * Busca a apresentação através do seu id
          * que tava no elemento na lista
@@ -85,12 +85,12 @@ function PresentationView() {
          * Percorre o seu conteúdo, que é um array de estrofes
          * e pra cada estrofe seta o seu número seguido dos seus slides
          */
-        for(strophe of presentation.content) {
+        for (strophe of presentation.content) {
 
             presentationViewElement.append('[' + strophe.num + ']');
             presentationViewElement.append('<br>');
 
-            for ( slide of strophe.slides ) {
+            for (slide of strophe.slides) {
                 presentationViewElement.append(slide);
                 presentationViewElement.append('<br>');
             }
@@ -102,19 +102,19 @@ function PresentationView() {
      *
      * Quando trocar o elemento selecionado, busca as respectivas apresentações
      */
-    $('#categories').change(function() {
+    $('#categories').change(function () {
         load();
     })
 
-    $('.home').click(function() {
+    $('.home').click(function () {
         $('#iframe').addClass('hide');
     })
 
-    $('.new').click(function() {
+    $('.new').click(function () {
         window.open(PRESENTATION_MANAGER_URL);
     })
 
-    $('.edit').click(function() {
+    $('.edit').click(function () {
         let id = getSelected();
 
         if (!id) {
@@ -125,7 +125,7 @@ function PresentationView() {
         window.open(PRESENTATION_MANAGER_URL + '?id=' + id);
     })
 
-    $('.presentate').click(async function() {
+    $('.presentate').click(async function () {
         let id = getSelected();
 
         if (!id) {
@@ -138,7 +138,7 @@ function PresentationView() {
         $('#iframe').removeClass('hide');
     })
 
-    $('.remove').click(async function() {
+    $('.remove').click(async function () {
         let id = getSelected();
 
         if (!id) {
@@ -146,16 +146,16 @@ function PresentationView() {
             return;
         }
 
-        if(confirm('Deseja relmente apagar?')) {
+        if (confirm('Deseja relmente apagar?')) {
             try {
                 await controller.remove(id);
             }
-            catch(e) {}
+            catch (e) { }
             load();
         }
     })
 
-    $('.refresh').click(function() {
+    $('.refresh').click(function () {
         location.reload();
     })
 
@@ -165,7 +165,7 @@ function PresentationView() {
         $('#iframe').removeClass('hide');
     })
 
-    $('.edit2').click(function() {
+    $('.edit2').click(function () {
         let id = getSelected();
 
         if (!id) {
@@ -191,11 +191,11 @@ function PresentationView() {
             presentation.category = 'Favoritos';
             let result = await controller.create(presentation);
         }
-        catch(e) {}
+        catch (e) { }
     })
 
-    $('.see').click(function() {
-        if ($(this).attr('class').includes('active') ) {
+    $('.see').click(function () {
+        if ($(this).attr('class').includes('active')) {
             $(this).removeClass('active');
             controller.closeSlides();
         }
@@ -205,34 +205,34 @@ function PresentationView() {
         }
     })
 
-    $('#powerpoint').click(function() {
-        $('.powerpoint input').click();        
+    $('#powerpoint').click(function () {
+        $('.powerpoint input').click();
     })
 
-    $('.powerpoint input').change(function() {
+    $('.powerpoint input').change(function () {
         controller.openPowerPoint(this.files[0])
     })
 
-    $('.gallery').click(function() {
+    $('.gallery').click(function () {
         //window.open(GALLERY_URL + '?ip=' + receptorIp);
         $('#iframe').attr('src', GALLERY_URL + '?ip=' + receptorIp);
         $('#iframe').removeClass('hide');
     })
 
-    $('.bible').click(function() {
+    $('.bible').click(function () {
         $('#iframe').attr('src', BIBLE_URL + '?ip=' + receptorIp);
         $('#iframe').removeClass('hide');
     })
 
-    $('.settings').click(function() {
+    $('.settings').click(function () {
         $('#iframe').attr('src', SETTINGS_URL + '?ip=' + receptorIp);
         $('#iframe').removeClass('hide');
     })
 
-    $('#btn-search').click(async function() {
+    $('#btn-search').click(async function () {
         let str = $('#search').val();
         let result = await controller.search(str.toLowerCase());
-        
+
         setPresentations(result);
     })
 
@@ -240,11 +240,11 @@ function PresentationView() {
      * Evento do tipo "on", para aplicar a todas as apresentações,
      * já que elas são dinâmicas dependendo da categoria selecionada
      */
-    $(document).on('click', '.presentation', function() {
+    $(document).on('click', '.presentation', function () {
         select(this);
     })
 
-    $(document).on('click', '#left-menu span', function() {
+    $(document).on('click', '#sidebar span', function () {
         selectMenuItem(this);
     })
 

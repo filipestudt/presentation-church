@@ -5,27 +5,39 @@ $font-family: Poppins;
 $input-font-family: "DM Sans", sans-serif;
 $input-background-color: #fff;
 $input-box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+$content-wrapper-padding: 30px;
 
 $icon-color: #1f1c2e;
+$icon-background-color: #1f1c2e;
 $active-icon-color: #fff;
-$hover-icon-color: #c3cff4;
+$hover-icon-color: #fff;
+$hover-icon-background-color: #c3cff4;
 
 $border-radius: 40px;
 
+@mixin icon {
+    padding: 8px;
+    border-radius: 50px;
+
+    svg {
+        fill: $icon-color;
+    }
+
+    &:hover {
+        background-color: $hover-icon-background-color;
+
+        svg {
+            fill: $hover-icon-color;
+        }
+    }
+}
+
 @mixin active-icon {
-    background-color: $icon-color;
+    background-color: $icon-background-color;
     border-radius: 50px;
 
     svg {
         fill: $active-icon-color;
-    }
-
-    &:hover {
-        background-color: $hover-icon-color;
-
-        svg {
-            fill: $icon-color;
-        }
     }
 }
 
@@ -33,6 +45,11 @@ $border-radius: 40px;
     font-size: 12pt;
     font-weight: 700;
     color: $text-color;
+}
+
+body, .row {
+    padding: 0px;
+    margin: 0px;
 }
 
 *:focus {
@@ -48,7 +65,11 @@ $border-radius: 40px;
     background-color: $background-color;
 
     .header {
-        padding: 15px;
+        padding: 16px;
+
+        #logo {
+            padding: 8px;
+        }
 
         #search-container {
             padding: 5px;
@@ -76,8 +97,30 @@ $border-radius: 40px;
         }
     }
 
-    #left-menu {
+    #sidebar {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 0px 16px;
+
+        span {
+            @include icon();
+            margin-top: 30px;
+
+            &.active {
+                @include active-icon(); 
+            }
+        }
+
+        #settings-container {
+            position: absolute;
+            bottom: 0px;
+        }
+    }
+
+    #presentations-wrapper {
+        border-radius: $border-radius;
+        background-color: $content-background-color;
+        padding: $content-wrapper-padding;
     }
 }
