@@ -38,6 +38,9 @@
                         d="M3 19V5.7a1 1 0 0 1 .658-.94l9.671-3.516a.5.5 0 0 1 .671.47v4.953l6.316 2.105a1 1 0 0 1 .684.949V19h2v2H1v-2h2zm2 0h7V3.855L5 6.401V19zm14 0v-8.558l-5-1.667V19h5z" />
                 </svg>
             </span> -->
+            <!-- <div>
+                <button class="btn btn-outline-success" id="btn-search">Buscar</button>
+            </div> -->
             <div id="search-container" class="flex-row">
                 <input type="text" id="search" class="border-0" placeholder="Pesquisar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#7e828b">
@@ -46,10 +49,18 @@
                         d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" />
                 </svg>
             </div>
-            <!-- <div>
-                <button class="btn btn-outline-success" id="btn-search">Buscar</button>
-            </div> -->
-            <div id="loading"></div>
+
+            <div class="flex-row right align-items-center">
+                <div id="theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path
+                            d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z" />
+                    </svg>
+                </div>
+
+                <div id="loading"></div>
+            </div>
         </header>
 
         <div class="row">
@@ -70,20 +81,14 @@
                     </svg>
                 </span>
 
-                <!-- <span class="presentate" title="Apresentar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#7e828b">
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path
-                            d="M22 19v2h-2v-2H4v2H2v-2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10.528A5.985 5.985 0 0 1 17 3c1.777 0 3.374.773 4.472 2H22a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zM11.341 7H3v10h18v-3.528A6 6 0 0 1 11.341 7zM17 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM5 13h2v2H5v-2zm3 0h2v2H8v-2z" />
-                    </svg>
-                </span>
-                <span class="favorite" title="Favoritar">
+
+                <span class="favorites">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#7e828b">
                         <path fill="none" d="M0 0h24v24H0z" />
                         <path
                             d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
                     </svg>
-                </span> -->
+                </span>
 
                 <!-- <span class="refresh" title="Recarregar">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#7e828b"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg>
@@ -114,48 +119,69 @@
                 </div>
             </div>
 
-            <div id="presentation-container">
-                <div id="presentation-options">
-                    <span class="edit2" title="Editar">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
-                            fill="#7e828b">
-                            <path fill="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z" />
-                        </svg>
-                        Editar
-                    </span>
-                    <span class="remove" title="Excluir">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
-                            fill="#7e828b">
-                            <path fill="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z" />
-                        </svg>
-                        Excluir
-                    </span>
-                </div>
-                <p class="title">Letra</p>
-                <div id="presentation-view">
+            <div id="center-container" class="flex-row">
+                <iframe id="iframe" class="hide"></iframe>
 
+                <div id="presentation-container">
+                    <div id="presentation-options" class="flex-row">
+                        <span class="edit2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                fill="#7e828b">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z" />
+                            </svg>
+                            Editar
+                        </span>
+                        <span class="remove">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                fill="#7e828b">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z" />
+                            </svg>
+                            Excluir
+                        </span>
+                        <span class="favorite">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
+                            </svg>
+                            Favoritar
+                        </span>
+                        <span class="presentate">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                fill="#7e828b">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M22 19v2h-2v-2H4v2H2v-2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10.528A5.985 5.985 0 0 1 17 3c1.777 0 3.374.773 4.472 2H22a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zM11.341 7H3v10h18v-3.528A6 6 0 0 1 11.341 7zM17 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM5 13h2v2H5v-2zm3 0h2v2H8v-2z" />
+                            </svg>
+                            Apresentar
+                        </span>
+                    </div>
+                    <p class="title">Letra</p>
+                    <div id="presentation-view">
+
+                    </div>
+                </div>
+
+                <div id="presentations-wrapper">
+                    <p>Hinos</p>
+                    <select id="categories">
+                        <option value="Hinos">Hinos</option>
+                        <option value="HCC">HCC</option>
+                        <option value="CC">CC</option>
+                        <option value="Favoritos">Favoritos</option>
+                    </select>
+                    <span class="divider"></span>
+                    <div id="presentation-list">
+
+                    </div>
                 </div>
             </div>
 
-            <div id="presentations-wrapper">
-                <p>Hinos</p>
-                <select id="categories">
-                    <option value="Hinos">Hinos</option>
-                    <option value="HCC">HCC</option>
-                    <option value="CC">CC</option>
-                    <option value="Favoritos">Favoritos</option>
-                </select>
-                <span class="divider"></span>
-                <div id="presentation-list">
 
-                </div>
-            </div>
-
-            <iframe id="iframe" class="hide"></iframe>
         </div>
 
     </div>

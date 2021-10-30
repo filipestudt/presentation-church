@@ -29,10 +29,12 @@ function PresentationView() {
         presentationListElement.html('');
         presentationViewElement.html('');
 
-        for (obj of data) {
+        for (let obj of data) {
             presentationListElement.append(`
                 <span id="${obj.id}" class="presentation list-group-item">${obj.name}</span>`)
         }
+
+        select($('.presentation')[0]);
     }
 
     var getSelected = function () {
@@ -85,16 +87,26 @@ function PresentationView() {
          * Percorre o seu conteúdo, que é um array de estrofes
          * e pra cada estrofe seta o seu número seguido dos seus slides
          */
-        for (strophe of presentation.content) {
+        for (let strophe of presentation.content) {
 
             presentationViewElement.append('[' + strophe.num + ']');
             presentationViewElement.append('<br>');
 
-            for (slide of strophe.slides) {
-                presentationViewElement.append(slide);
-                presentationViewElement.append('<br>');
+            if (strophe.slides) {
+                for (let slide of strophe.slides) {
+                    presentationViewElement.append(slide);
+                    presentationViewElement.append('<br>');
+                }
             }
         }
+    }
+
+    var search = async function () {
+        let str = $('#search').val();
+        let result = await controller.search(str.toLowerCase());
+        console.log(result)
+
+        setPresentations(result);
     }
 
     /**
@@ -229,11 +241,25 @@ function PresentationView() {
         $('#iframe').removeClass('hide');
     })
 
-    $('#btn-search').click(async function () {
-        let str = $('#search').val();
-        let result = await controller.search(str.toLowerCase());
+    $('#search').keypress(function (evt) {
+        if (evt.key == 'Enter') {
+            search();
+        }
+    })
 
-        setPresentations(result);
+    $('#btn-search').click(function () {
+        search();
+    })
+
+    $('#theme').click(function () {
+        var themeElm = document.getElementById('main')
+        if (themeElm.classList.contains('theme-dark')) {
+            themeElm.classList.remove('theme-dark');
+            themeElm.classList.add('theme-light');
+        } else {
+            themeElm.classList.remove('theme-light');
+            themeElm.classList.add('theme-dark');
+        }
     })
 
     /**

@@ -1,56 +1,65 @@
 function PresentationController() {
-    var requests = new RequestMaker( API_URL );
+    var requests = new RequestMaker(API_URL);
 
-    this.load = function(category) {
+    this.load = function (category) {
         return requests.getByCategory(category);
     }
 
-    this.getById = function(id) {
+    this.getById = function (id) {
         return requests.getById(id);
     }
 
-    this.create = function(data) {
+    this.create = function (data) {
         return requests.post(data)
     }
 
-    this.remove = function(id) {
+    this.remove = function (id) {
         return requests.remove(id);
     }
 
-    this.getReceptorIp = function() {
+    this.getReceptorIp = function () {
         return requests.getReceptorIp();
     }
 
-    this.openSlides = function() {
+    this.openSlides = function () {
         return requests.openSlides();
     }
 
-    this.closeSlides = function() {
+    this.closeSlides = function () {
         return requests.closeSlides();
     }
 
-    const doSearch = function(pres, str) {
+    const doSearch = function (pres, str) {
         if (pres.name.toLowerCase().includes(str)) {
             return pres;
         }
 
-        for (content of pres.content) {
-            for (slide of content.slides) {
+        console.log(pres)
+
+        if (!pres.content) {
+            return null;
+        }
+
+        for (let content of pres.content) {
+            if (!content.slides) {
+                return null;
+            }
+            for (let slide of content.slides) {
                 if (slide.toLowerCase().includes(str)) {
                     return pres;
                 }
-            }                
+            }
         }
 
         return null;
     }
 
-    this.search = async function(str) {
+    this.search = async function (str) {
         let result = [];
         let searchResult;
         let data = await requests.get();
 
-        for (pres of data) {
+        for (let pres of data) {
             searchResult = doSearch(pres, str);
 
             if (searchResult) {
@@ -62,14 +71,14 @@ function PresentationController() {
         return result.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    this.openPowerPoint = async function(path) {
+    this.openPowerPoint = async function (path) {
         try {
             await requests.powerpoint(path);
         }
-        catch(e) {
+        catch (e) {
             alert(e)
         }
 
-       $('.powerpoint input').val('');
+        $('.powerpoint input').val('');
     }
 }
