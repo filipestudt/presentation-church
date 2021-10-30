@@ -1,0 +1,40 @@
+body, .row {
+    padding: 0px;
+    margin: 0px;
+}
+
+*:focus {
+    outline: none;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.hide {
+    display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    padding: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(211, 209, 209);
+    border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

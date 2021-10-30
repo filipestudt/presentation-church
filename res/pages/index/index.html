@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
     <link rel="stylesheet" href="../../assets/css/light-theme.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
 </head>
 
 <body>
@@ -30,13 +31,13 @@
                         d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z" />
                 </svg>
             </div> -->
-            <span id="logo">
+            <!-- <span id="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#28a745">
                     <path fill="none" d="M0 0h24v24H0z" />
                     <path
                         d="M3 19V5.7a1 1 0 0 1 .658-.94l9.671-3.516a.5.5 0 0 1 .671.47v4.953l6.316 2.105a1 1 0 0 1 .684.949V19h2v2H1v-2h2zm2 0h7V3.855L5 6.401V19zm14 0v-8.558l-5-1.667V19h5z" />
                 </svg>
-            </span>
+            </span> -->
             <div id="search-container" class="flex-row">
                 <input type="text" id="search" class="border-0" placeholder="Pesquisar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#7e828b">
@@ -68,7 +69,8 @@
                             d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2h4zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
                     </svg>
                 </span>
-                <span class="presentate" title="Apresentar">
+
+                <!-- <span class="presentate" title="Apresentar">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#7e828b">
                         <path fill="none" d="M0 0h24v24H0z" />
                         <path
@@ -81,7 +83,8 @@
                         <path
                             d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
                     </svg>
-                </span>
+                </span> -->
+
                 <!-- <span class="refresh" title="Recarregar">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#7e828b"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg>
                 </span>                 -->
@@ -111,19 +114,6 @@
                 </div>
             </div>
 
-            <div id="presentations-wrapper">
-                <select id="categories" class="form-control">
-                    <option value="Hinos">Hinos</option>
-                    <option value="HCC">HCC</option>
-                    <option value="CC">CC</option>
-                    <option value="Favoritos">Favoritos</option>
-                </select>
-                <span class="divider"></span>
-                <div id="presentation-list">
-
-                </div>
-            </div>
-
             <div id="presentation-container">
                 <div id="presentation-options">
                     <span class="edit2" title="Editar">
@@ -145,7 +135,22 @@
                         Excluir
                     </span>
                 </div>
+                <p class="title">Letra</p>
                 <div id="presentation-view">
+
+                </div>
+            </div>
+
+            <div id="presentations-wrapper">
+                <p>Hinos</p>
+                <select id="categories">
+                    <option value="Hinos">Hinos</option>
+                    <option value="HCC">HCC</option>
+                    <option value="CC">CC</option>
+                    <option value="Favoritos">Favoritos</option>
+                </select>
+                <span class="divider"></span>
+                <div id="presentation-list">
 
                 </div>
             </div>
