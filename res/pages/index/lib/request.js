@@ -6,7 +6,7 @@ function RequestMaker(urlParam) {
         async: true
     });
 
-    this.get = function() {
+    this.get = function () {
         return $.ajax({
             type: 'GET',
             url: URL_BASE,
@@ -15,7 +15,7 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.getReceptorIp = function() {
+    this.getReceptorIp = function () {
         return $.ajax({
             type: 'GET',
             url: RECEPTOR_URL,
@@ -24,7 +24,7 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.getById = function(id) {
+    this.getById = function (id) {
         return $.ajax({
             type: 'GET',
             url: URL_BASE + '/' + id,
@@ -33,7 +33,7 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.getByCategory = function(category) {
+    this.getByCategory = function (category) {
         return $.ajax({
             type: 'GET',
             url: URL_BASE + '/category/' + category,
@@ -42,7 +42,25 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.post = function(data) {
+    this.getFavorites = function () {
+        return $.ajax({
+            type: 'GET',
+            url: URL_BASE + '/favorites',
+            success: (data) => data,
+            error: (data) => `Error: ${data}`
+        });
+    }
+
+    this.setAsFavorite = function (id) {
+        return $.ajax({
+            type: 'GET',
+            url: URL_BASE + '/setAsFavorite/' + id,
+            success: (data) => data,
+            error: (data) => `Error: ${data}`
+        });
+    }
+
+    this.post = function (data) {
         $.ajaxSetup({
             async: true
         });
@@ -59,18 +77,18 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.remove = function(id) {
+    this.remove = function (id) {
         return $.ajax({
             type: 'DELETE',
             url: URL_BASE,
-            data: {id: id},
+            data: { id: id },
             success: (data) => data,
             error: (data) => `Error: ${data}`
         });
     }
 
     // Receptor requests
-    this.openSlides = function() {
+    this.openSlides = function () {
         return $.ajax({
             type: 'GET',
             url: 'http://' + receptorIp + ':' + RECEPTOR_PORT + '/slides/open',
@@ -79,7 +97,7 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.closeSlides = function() {
+    this.closeSlides = function () {
         return $.ajax({
             type: 'GET',
             url: 'http://' + receptorIp + ':' + RECEPTOR_PORT + '/slides/close',
@@ -88,7 +106,7 @@ function RequestMaker(urlParam) {
         });
     }
 
-    this.powerpoint = function(data) {
+    this.powerpoint = function (data) {
         let fd = new FormData();
         fd.append('ppt', data);
 

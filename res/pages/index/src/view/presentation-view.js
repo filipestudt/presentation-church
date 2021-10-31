@@ -9,6 +9,8 @@ function PresentationView() {
     const categoriesElement = $('#categories');
     const presentationListElement = $('#presentation-list');
 
+    $('.remove-favorite').addClass('hide');
+
     /**
      * Carrega todas as apresentações e seta na tela
      * Usa o valor do select de categorias
@@ -16,6 +18,14 @@ function PresentationView() {
     var load = async function () {
         let value = categoriesElement.val();
         var data = await controller.load(value);
+        // Sort alphabetically
+        data.sort((a, b) => a.name.localeCompare(b.name));
+        // Carrega em tela 
+        setPresentations(data);
+    }
+
+    var getFavorites = async function () {
+        let data = await controller.getFavorites();
         // Sort alphabetically
         data.sort((a, b) => a.name.localeCompare(b.name));
         // Carrega em tela 
@@ -120,6 +130,10 @@ function PresentationView() {
 
     $('.home').click(function () {
         $('#iframe').addClass('hide');
+        $('.remove-favorite').addClass('hide');
+        $('.remove').removeClass('hide');
+        $('.favorite').removeClass('hide');
+        load();
     })
 
     $('.new').click(function () {
@@ -199,11 +213,17 @@ function PresentationView() {
         }
 
         try {
-            let presentation = await controller.getById(id);
-            presentation.category = 'Favoritos';
-            let result = await controller.create(presentation);
+            await controller.setAsFavorite(id);
+            alert('Favoritado');
         }
         catch (e) { }
+
+        // try {
+        //     let presentation = await controller.getById(id);
+        //     presentation.category = 'Favoritos';
+        //     let result = await controller.create(presentation);
+        // }
+        // catch (e) { }
     })
 
     $('.see').click(function () {
@@ -249,6 +269,15 @@ function PresentationView() {
 
     $('#btn-search').click(function () {
         search();
+    })
+
+    $('.favorites').click(function () {
+        $('#iframe').addClass('hide');
+        $('.remove-favorite').removeClass('hide');
+        $('.remove').addClass('hide');
+        $('.favorite').addClass('hide');
+        //load('Favoritos');
+        getFavorites();
     })
 
     $('#theme').click(function () {

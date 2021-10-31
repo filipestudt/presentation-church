@@ -9,6 +9,14 @@ function PresentationController() {
         return requests.getById(id);
     }
 
+    this.getFavorites = function () {
+        return requests.getFavorites();
+    }
+
+    this.setAsFavorite = function (id) {
+        return requests.setAsFavorite(id);
+    }
+
     this.create = function (data) {
         return requests.post(data)
     }

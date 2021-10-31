@@ -5,13 +5,13 @@ const adapter = new fs('src/database/presentationdb.json');
 const lowbd = low(adapter);
 const db = lowbd.get(DATABASE_NAME);
 
-exports.get = async() => {
+exports.get = async () => {
     return db.value();
 }
 
-exports.getById = async(id) => {
-    var response = await db.find({id: id})
-    .value();
+exports.getById = async (id) => {
+    var response = await db.find({ id: id })
+        .value();
 
     if (!response) {
         throw 'Apresentação não encontrada'
@@ -20,9 +20,9 @@ exports.getById = async(id) => {
     return response;
 }
 
-exports.getByName = async(name) => {
-    var response = await db.find({name: name})
-    .value();
+exports.getByName = async (name) => {
+    var response = await db.find({ name: name })
+        .value();
 
     if (!response) {
         throw 'Apresentação não encontrada'
@@ -31,7 +31,7 @@ exports.getByName = async(name) => {
     return response;
 }
 
-exports.getByCategory = async(category) => {
+exports.getByCategory = async (category) => {
     var response = await db.value();
     var result = [];
 
@@ -44,7 +44,21 @@ exports.getByCategory = async(category) => {
     return result;
 }
 
-exports.create = async(data) => {
+exports.getFavorites = async () => {
+    var data = await db.find({ isFavorite: true }).value() || [];
+    console.log(data);
+    return data;
+}
+
+exports.setAsFavorite = async (id) => {
+    var obj = await db.find({ id: id })
+        .value();
+
+    obj.isFavorite = true;
+    db.write();
+}
+
+exports.create = async (data) => {
     var response = await db.push(data).write();
     /*
      * O lowdb retorna um array com todos os objetos do banco de dados
@@ -58,7 +72,7 @@ exports.create = async(data) => {
     return response;
 }
 
-exports.update = async(id, data) => {
+exports.update = async (id, data) => {
     /**
      * Verifica se existe
      */
@@ -70,11 +84,11 @@ exports.update = async(id, data) => {
     }
 
     // se tiver tudo certo, atualiza
-    await db.find({id: id}).assign(data)
-    .write();
+    await db.find({ id: id }).assign(data)
+        .write();
 }
 
-exports.delete = async(id) => {
+exports.delete = async (id) => {
     /**
      * Verifica se existe
      */
@@ -84,10 +98,10 @@ exports.delete = async(id) => {
     if (!presentation) {
         throw 'Apresentação não encontrada'
     }
-    
+
     // deleta
-    var response = await db.remove({id: id})
-    .write();
+    var response = await db.remove({ id: id })
+        .write();
 
     /*
      * O lowdb retorna um array com os objetos que foram apagados

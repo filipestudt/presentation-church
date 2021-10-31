@@ -2,11 +2,11 @@ const repository = require('../repositories/presentation-repository');
 const validate = require('../validators/presentation-validator');
 const shortid = require('shortid');
 
-exports.get = async(req, res, next) => {
+exports.get = async (req, res, next) => {
     try {
         var data = await repository.get();
         res.status(200).send(data);
-    } 
+    }
     catch (e) {
         res.status(500).send({
             message: 'Falha ao processar sua requisição'
@@ -14,7 +14,7 @@ exports.get = async(req, res, next) => {
     }
 }
 
-exports.getById = async(req, res, next) => {
+exports.getById = async (req, res, next) => {
     try {
         var data = await repository.getById(req.params.id);
         res.status(200).send(data);
@@ -26,7 +26,7 @@ exports.getById = async(req, res, next) => {
     }
 }
 
-exports.getByName = async(req, res, next) => {
+exports.getByName = async (req, res, next) => {
     try {
         var data = await repository.getByName(req.params.name);
         res.status(200).send(data);
@@ -38,7 +38,7 @@ exports.getByName = async(req, res, next) => {
     }
 }
 
-exports.getByCategory = async(req, res, next) => {
+exports.getByCategory = async (req, res, next) => {
     try {
         var data = await repository.getByCategory(req.params.category);
         res.status(200).send(data);
@@ -50,7 +50,31 @@ exports.getByCategory = async(req, res, next) => {
     }
 }
 
-exports.post = async(req, res, next) => {
+exports.getFavorites = async (req, res, next) => {
+    try {
+        var data = await repository.getFavorites();
+        res.status(200).send(data);
+    }
+    catch (e) {
+        res.status(500).send({
+            message: 'Erro ao buscar favoritos: ' + e
+        });
+    }
+}
+
+exports.setAsFavorite = async (req, res, next) => {
+    try {
+        var data = await repository.setAsFavorite(req.params.id);
+        res.status(200).send(data);
+    }
+    catch (e) {
+        res.status(500).send({
+            message: 'Erro ao favoritar: ' + e
+        });
+    }
+}
+
+exports.post = async (req, res, next) => {
     try {
         var data = req.body;
         data.id = shortid.generate();
@@ -73,7 +97,7 @@ exports.post = async(req, res, next) => {
     }
 }
 
-exports.put = async(req, res, next) => {
+exports.put = async (req, res, next) => {
     try {
         var data = req.body;
 
@@ -94,7 +118,7 @@ exports.put = async(req, res, next) => {
     }
 }
 
-exports.delete = async(req, res, next) => {
+exports.delete = async (req, res, next) => {
     try {
         await repository.delete(req.body.id);
         res.status(200).send('Apresentação excluída com sucesso');

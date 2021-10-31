@@ -126,7 +126,7 @@
     #presentation-container {
         width: calc(60%);
         background-color: var(--content-background-color);
-        padding: var(--content-wrapper-padding);
+        /*padding: var(--content-wrapper-padding);*/
         height: calc(100vh - 78px - 50px);
         border-radius: var(--border-radius);
 
@@ -134,6 +134,13 @@
             width: 100%;
             justify-content: space-between;
             align-items: center;
+            // border-bottom: 2px solid #ddd;
+            
+            box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.301);
+
+            padding: var(--content-wrapper-padding);
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
 
             span {
                 cursor: pointer;
@@ -144,9 +151,14 @@
             }
         }
 
+        .title {
+            padding: var(--content-wrapper-padding);
+        }
+
         #presentation-view {
+            padding: var(--content-wrapper-padding);
             overflow: scroll;
-            height: calc(100% - 50px);
+            height: calc(100% - 240px);
         }
     }
 
