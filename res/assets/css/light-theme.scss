@@ -1,218 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-//$background-color: #f3f6fd;
-$background-color: var(--bg-color);
-$content-background-color: #fff;
-$text-color: #1f1c2e;
-$font-family: Poppins;
-$input-font-family: "DM Sans", sans-serif;
-$input-background-color: #fff;
-$input-box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
-$content-wrapper-padding: 30px;
-$header-padding: 16px;
-
-$icon-color: #1f1c2e;
-$icon-background-color: #1f1c2e;
-$active-icon-color: #fff;
-$hover-icon-color: #fff;
-$hover-icon-background-color: #c3cff4;
-
-$border-radius: 20px;
-
 #main.theme-light {
-    --bg-color: #f3f6fd;
+    --background-color: #f3f6fd;
+    --content-background-color: #fff;
+    --text-color: #1f1c2e;
+    --font-family: Poppins;
+    --input-font-family: "DM Sans", sans-serif;
+    --input-background-color: #fff;
+    --input-box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+    --content-wrapper-padding: 30px;
+    --header-padding: 16px;
+
+    --icon-color: #1f1c2e;
+    --icon-background-color: #1f1c2e;
+    --active-icon-color: #fff;
+    --hover-icon-color: #fff;
+    --hover-icon-background-color: #c3cff4;
+
+    --border-radius: 20px;
 }
 
 #main.theme-dark {
-    --bg-color: black;
-}
-
-@mixin icon {
-    padding: 8px;
-    border-radius: 50px;
-
-    svg {
-        fill: $icon-color;
-    }
-
-    &:hover {
-        background-color: $hover-icon-background-color;
-
-        svg {
-            fill: $hover-icon-color;
-        }
-    }
-}
-
-@mixin active-icon {
-    background-color: $icon-background-color;
-    border-radius: 50px;
-
-    svg {
-        fill: $active-icon-color;
-    }
-}
-
-@mixin title {
-    font-family: $font-family;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    color: $text-color;
-}
-
-.title {
-    @include title();
-}
-
-#main {
-    font-family: $font-family;
-    background-color: $background-color;
-    height: 100vh;
-
-    .header {
-        padding: 16px;
-        margin-bottom: 30px;
-        align-items: center;
-
-        #logo {
-            padding: 8px;
-
-            svg {
-                fill: $icon-color;
-            }
-        }
-
-        #search-container {
-            width: 40%;
-            height: 40px;
-            margin-left: 56px;
-            padding: 5px;
-            align-items: center;
-            border-radius: $border-radius;
-            background-color: $input-background-color;
-            font-family: $input-font-family;
-            box-shadow: $input-box-shadow;
-
-            svg {
-                margin-right: 5px;
-                fill: $icon-color;
-            }
-
-            input {
-                width: 100%;
-                margin-left: 10px;
-                border: none;            
-            }
-        }
-
-        #theme, #loading {       
-            padding: 0 10px 0 10px;
-        }
-
-        #theme {
-            border-right: 2px solid #ddd;
-        }
-    }
-
-    #sidebar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px 16px;
-
-        margin: 50px 0px 0px 50px;
-
-        span, div {
-            @include icon();
-            margin-top: 30px;
-
-            &.active {
-                @include active-icon(); 
-            }
-        }
-    }
-
-    #center-container {
-        width: calc(100vw - 190px);
-    }
-
-    iframe {
-        position: absolute;
-        z-index: 100;
-        width: calc(100vw - 220px);
-        height: calc(100vh - 78px - 50px);
-        border-radius: $border-radius;
-    }
-
-    .list-group-item {
-       
-    }
-
-    .list-group-item.active {
-    }
-
-    #presentation-container {
-        width: calc(60%);
-        background-color: $content-background-color;
-        padding: $content-wrapper-padding;
-        height: calc(100vh - 78px - 50px);
-        border-radius: $border-radius;
-
-        #presentation-options {
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-
-            span {
-                cursor: pointer;
-                
-                svg {
-                    fill: $icon-color;
-                }
-            }
-        }
-
-        #presentation-view {
-            overflow: scroll;
-            height: calc(100% - 50px);
-        }
-    }
-
-    #presentations-wrapper {
-        margin-left: 25px;
-        width: calc(35%);
-        border-radius: $border-radius;
-        background-color: $content-background-color;
-        padding: $content-wrapper-padding;
-        height: calc(100vh - 78px - 50px);
-
-        padding: 0px;
-        p {
-            padding: 20px;
-            margin: 10px 10px;
-        }
-
-        p {
-            @include title();
-        }
-
-        select {
-            @include title();
-            display: none;
-        }
-
-        #presentation-list {
-            width: 100%;
-            height: calc(100% - 120px);
-            overflow-y: scroll;
-
-            span {
-                border: 1px solid rgba(0, 0, 0, 0.085);
-                border-left: none;
-                border-right: none;
-                border-bottom: none;
-            }
-        }
-    }
+    --background-color: black;
 }

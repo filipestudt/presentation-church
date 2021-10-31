@@ -3,9 +3,11 @@ const API_URL = 'http://localhost:' + SERVER_PORT + '/presentations';
 var requestMaker = new RequestMaker(API_URL);
 
 var id = GetURLParameter('id');
-if (id) load();
+if (id) {
+    load();
+}
 
-$('#save').click(async function() {
+$('#save').click(async function () {
     var result = {
         name: $('#name').val(),
         category: $('#category').val(),
@@ -24,7 +26,7 @@ $('#save').click(async function() {
             window.opener.postMessage('saved', '*');
             window.close();
         }
-        catch(e) {
+        catch (e) {
             alert(e.responseJSON.message);
         }
     } else {
@@ -33,7 +35,7 @@ $('#save').click(async function() {
             window.opener.postMessage('saved', '*');
             window.close();
         }
-        catch(e) {
+        catch (e) {
             alert(e.responseJSON.message);
         }
     }
@@ -66,7 +68,7 @@ async function load() {
 
     for (let strophe of data.content) {
         result += '[' + strophe.num + ']' + '\n';
-        result += strophe.slides.join('\n\n');        
+        result += strophe.slides.join('\n\n');
     }
 
     $('#content').val(result);

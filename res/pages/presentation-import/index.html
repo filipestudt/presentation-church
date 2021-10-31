@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Editor</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/all.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body>
-        <header>
-            <nav id="navbar">
-                <div class="row">
-                    <div class="col-5">
-                        <input type="text" id="name" value="Sem título">
-                    </div>
-                    <div class="col-5 category">
-                        <b><i>Categoria:</i></b>
-                        <select id="category">
-                            <option value="Hinos">Hinos</option>
-                            <option value="HCC">HCC</option>
-                            <option value="CC">CC</option>
-                            <option value="Favoritos">Favoritos</option>
-                        </select>
-                    </div>
-                    <div class="col-2">
-                        <button id="cancel">Cancelar</button>
-                        <button id="save">Salvar</button>
-                    </div>
+
+<head>
+    <meta charset="utf-8">
+    <title>Editor</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="../../assets/css/light-theme.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body id="main" class="theme-light">
+    <header>
+        <nav id="navbar">
+            <div class="row">
+                <div class="col-5">
+                    <input type="text" id="name" value="Sem título">
                 </div>
-            </nav>
-        </header>
-
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10" id="main">
-                <textarea id="content"></textarea>
+                <div class="col-5 category">
+                    Categoria:
+                    <select id="category">
+                        <option value="Hinos">Hinos</option>
+                        <option value="HCC">HCC</option>
+                        <option value="CC">CC</option>
+                        <option value="Favoritos">Favoritos</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button id="save">Salvar</button>
+                </div>
             </div>
-            <div class="col-1"></div>
-        </div>
+        </nav>
+    </header>
 
 
-        <script>
-			if (typeof module === 'object') {
-				window.module = module;
-				module = undefined;
-			}
-		</script>
+    <div id="content-wrapper">
+        <textarea id="content"></textarea>
+    </div>
 
-        <script src="assets/js/jquery-3.4.1.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/all.js"></script>
-        <script src="lib/lib.js"></script>
-        <script src="lib/request.js"></script>
-        <script src="src/main.js"></script>
-    </body>
+
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/all.js"></script>
+    <script src="lib/lib.js"></script>
+    <script src="lib/request.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
 </html>
