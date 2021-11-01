@@ -127,49 +127,67 @@
 
                 <div id="presentation-container">
                     <div id="presentation-options" class="flex-row">
-                        <span class="edit2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
-                                fill="#7e828b">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z" />
-                            </svg>
-                            Editar
-                        </span>
-                        <span class="remove">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
-                                fill="#7e828b">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z" />
-                            </svg>
-                            Excluir
-                        </span>
-                        <span class="favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
-                            </svg>
-                            Favoritar
-                        </span>
-                        <span class="remove-favorite">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
-                            </svg>
-                            Remover Favorito
-                        </span>
-                        <span class="presentate">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
-                                fill="#7e828b">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M22 19v2h-2v-2H4v2H2v-2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10.528A5.985 5.985 0 0 1 17 3c1.777 0 3.374.773 4.472 2H22a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zM11.341 7H3v10h18v-3.528A6 6 0 0 1 11.341 7zM17 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM5 13h2v2H5v-2zm3 0h2v2H8v-2z" />
-                            </svg>
-                            Apresentar
-                        </span>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+
+                            <button type="button" class="btn btn-secondary edit2">
+                                <span>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                        fill="#7e828b">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z" />
+                                    </svg> -->
+                                    Editar
+                                </span>
+                            </button>
+
+                            <button type="button" class="btn btn-secondary remove">
+                                <span>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                        fill="#7e828b">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z" />
+                                    </svg> -->
+                                    Excluir
+                                </span>
+                            </button>
+
+                            <button type="button" class="btn btn-secondary favorite">
+                                <span>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
+                                    </svg> -->
+                                    Favoritar
+                                </span>
+                            </button>
+
+                            <button type="button" class="btn btn-secondary remove-favorite">
+                                <span>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z" />
+                                    </svg> -->
+                                    Remover Favorito
+                                </span>
+                            </button>
+
+                            <button type="button" class="btn btn-secondary presentate">
+                                <span>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                        fill="#7e828b">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M22 19v2h-2v-2H4v2H2v-2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10.528A5.985 5.985 0 0 1 17 3c1.777 0 3.374.773 4.472 2H22a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zM11.341 7H3v10h18v-3.528A6 6 0 0 1 11.341 7zM17 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM5 13h2v2H5v-2zm3 0h2v2H8v-2z" />
+                                    </svg> -->
+                                    Apresentar
+                                </span>
+                            </button>
+
+                        </div>
                     </div>
                     <p class="title">Letra</p>
                     <div id="presentation-view">

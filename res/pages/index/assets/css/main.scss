@@ -136,7 +136,7 @@
             align-items: center;
             // border-bottom: 2px solid #ddd;
             
-            box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.301);
+            //box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.301);
 
             padding: var(--content-wrapper-padding);
             border-top-left-radius: var(--border-radius);
@@ -147,6 +147,7 @@
                 
                 svg {
                     fill: var(--icon-color);
+                    fill: #fff;
                 }
             }
         }
