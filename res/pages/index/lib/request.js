@@ -45,9 +45,9 @@ function RequestMaker(urlParam) {
     this.getFavorites = function () {
         return $.ajax({
             type: 'GET',
-            url: URL_BASE + '/favorites',
+            url: URL_BASE + '/favorites/',
             success: (data) => data,
-            error: (data) => `Error: ${data}`
+            error: (data) => data
         });
     }
 
@@ -55,6 +55,15 @@ function RequestMaker(urlParam) {
         return $.ajax({
             type: 'GET',
             url: URL_BASE + '/setAsFavorite/' + id,
+            success: (data) => data,
+            error: (data) => `Error: ${data}`
+        });
+    }
+
+    this.removeFavorite = function (id) {
+        return $.ajax({
+            type: 'GET',
+            url: URL_BASE + '/removeFavorite/' + id,
             success: (data) => data,
             error: (data) => `Error: ${data}`
         });

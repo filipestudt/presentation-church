@@ -26,10 +26,7 @@ function PresentationView() {
 
     var getFavorites = async function () {
         let data = await controller.getFavorites();
-        // Sort alphabetically
-        data.sort((a, b) => a.name.localeCompare(b.name));
-        // Carrega em tela 
-        setPresentations(data);
+        setPresentations(data.reverse());
     }
 
     var setPresentations = function (data) {
@@ -217,13 +214,22 @@ function PresentationView() {
             alert('Favoritado');
         }
         catch (e) { }
+    })
 
-        // try {
-        //     let presentation = await controller.getById(id);
-        //     presentation.category = 'Favoritos';
-        //     let result = await controller.create(presentation);
-        // }
-        // catch (e) { }
+    $('.remove-favorite').click(async function () {
+        let id = getSelected();
+
+        if (!id) {
+            alert('Nenhum apresentação selecionada');
+            return;
+        }
+
+        try {
+            await controller.removeFavorite(id);
+            alert('Removido');
+            getFavorites();
+        }
+        catch (e) { }
     })
 
     $('.see').click(function () {
@@ -276,7 +282,6 @@ function PresentationView() {
         $('.remove-favorite').removeClass('hide');
         $('.remove').addClass('hide');
         $('.favorite').addClass('hide');
-        //load('Favoritos');
         getFavorites();
     })
 

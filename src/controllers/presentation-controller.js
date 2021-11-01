@@ -74,6 +74,18 @@ exports.setAsFavorite = async (req, res, next) => {
     }
 }
 
+exports.removeFavorite = async (req, res, next) => {
+    try {
+        var data = await repository.removeFavorite(req.params.id);
+        res.status(200).send(data);
+    }
+    catch (e) {
+        res.status(500).send({
+            message: 'Erro ao favoritar: ' + e
+        });
+    }
+}
+
 exports.post = async (req, res, next) => {
     try {
         var data = req.body;

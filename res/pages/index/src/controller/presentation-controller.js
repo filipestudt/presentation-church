@@ -17,6 +17,10 @@ function PresentationController() {
         return requests.setAsFavorite(id);
     }
 
+    this.removeFavorite = function (id) {
+        return requests.removeFavorite(id);
+    }
+
     this.create = function (data) {
         return requests.post(data)
     }

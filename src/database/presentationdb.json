@@ -40354,7 +40354,8 @@
           ]
         }
       ],
-      "id": "TyHSm2-0"
+      "id": "TyHSm2-0",
+      "isFavorite": true
     },
     {
       "name": "A Alegria está no coração",
@@ -40460,7 +40461,7 @@
         }
       ],
       "id": "ziqW-pmMq",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "name": "A minha é do Mestre",
@@ -40558,7 +40559,8 @@
           ]
         }
       ],
-      "id": "VMMcvIqb9"
+      "id": "VMMcvIqb9",
+      "isFavorite": false
     },
     {
       "name": "Acredito sim",
@@ -43883,37 +43885,6 @@
       "id": "IhTnuuxeiN"
     },
     {
-      "name": "zz",
-      "category": "Hinos",
-      "content": [
-        {
-          "num": "1",
-          "slides": [
-            "Pelo Senhor marchamos sim, o Seu exército poderoso é ",
-            "Sua glória será vista em toda a terra",
-            "Vamos cantar o canto da vitória “Glória a Deus”",
-            "Vencemos a batalha e toda arma contra nos perecerá."
-          ]
-        },
-        {
-          "num": "C",
-          "slides": [
-            "O nosso General é Cristo, ",
-            "seguimos os Seus passos nenhum inimigo nos resistirá."
-          ]
-        },
-        {
-          "num": "2",
-          "slides": [
-            "Pelo Messias marchamos sim, em Sua mãos a chave da vitória que nos leva a possuir a terra prometida",
-            "Vamos cantar o canto da vitória “Glória a Deus”",
-            "Vencemos a batalha, toda arma contra nós perecerá."
-          ]
-        }
-      ],
-      "id": "30FuxU4pvr"
-    },
-    {
       "name": "Sem título teste",
       "category": "Hinos",
       "content": [
@@ -44031,7 +44002,8 @@
           ]
         }
       ],
-      "id": "lRXBYQ0aw"
+      "id": "lRXBYQ0aw",
+      "isFavorite": true
     },
     {
       "name": "2 - novo hino",
@@ -44083,33 +44055,6 @@
       "id": "9RosYnlZ2"
     },
     {
-      "name": "1 - exe,m,plo3",
-      "category": "Hinos",
-      "content": [
-        {
-          "num": "1",
-          "slides": [
-            "Primeira fraseeeee",
-            "Segunda\nFrase\n"
-          ]
-        },
-        {
-          "num": "2",
-          "slides": [
-            "Estrofe logo embaixo sem espaço",
-            "Espçao a mais nesse slide"
-          ]
-        },
-        {
-          "num": "3",
-          "slides": [
-            "QQ aconteceu aqui"
-          ]
-        }
-      ],
-      "id": "H_rZb9BcL"
-    },
-    {
       "name": "1 - Testando categoria diferente",
       "category": "HCC",
       "content": [
@@ -44139,21 +44084,23 @@
           ]
         }
       ],
-      "id": "mFuYqcQZY"
+      "id": "mFuYqcQZY",
+      "isFavorite": false
     },
     {
-      "name": "1-Coro maisucolo",
+      "name": "1-Coro maisucolo ed",
       "category": "Hinos",
       "content": [
         {
           "num": "1",
           "slides": [
             "Dsadsa",
-            "[C]\ncoro"
+            "[C]\ncoroe"
           ]
         }
       ],
-      "id": "xGXPoOFkV"
+      "id": "xGXPoOFkV",
+      "isFavorite": true
     },
     {
       "name": "1-novo teste coro maisucolo",

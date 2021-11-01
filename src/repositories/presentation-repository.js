@@ -45,16 +45,23 @@ exports.getByCategory = async (category) => {
 }
 
 exports.getFavorites = async () => {
-    var data = await db.find({ isFavorite: true }).value() || [];
-    console.log(data);
-    return data;
+    return await db.filter({ isFavorite: true }).value() || [];
+    return await db.find({ isFavorite: true }).value() || [];
 }
 
 exports.setAsFavorite = async (id) => {
-    var obj = await db.find({ id: id })
+    var pres = await db.find({ id: id })
         .value();
 
-    obj.isFavorite = true;
+    pres.isFavorite = true;
+    db.write();
+}
+
+exports.removeFavorite = async (id) => {
+    var pres = await db.find({ id: id })
+        .value();
+
+    pres.isFavorite = false;
     db.write();
 }
 
