@@ -12,10 +12,18 @@ $seekbar_color_old: #4471ef;
 body {
     margin: 0px;
     padding: 0px;
-    background-color: $secondary;
-    color: rgba(255,255,255,0.6);
+    // background-color: $secondary;
+    // color: rgba(255,255,255,0.6);
     font-weight: 500;
     font-size: 12pt;
+
+    
+}
+
+#main {
+    background-color: var(--content-background-color);  
+    color: var(--text-color);
+    font-family: var(--input-font-family);
 }
 
 label {

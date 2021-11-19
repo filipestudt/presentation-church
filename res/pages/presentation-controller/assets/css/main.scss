@@ -1,18 +1,21 @@
-@import '../../../../assets/css/main';
-
 body {
     margin: 0px;
     padding: 0px;   
     overflow: hidden; 
-    background-color: $primary;
+    
+}
+
+#main {
+    background-color: var(--content-background-color);  
+    color: var(--text-color);
+    font-family: var(--input-font-family);
 }
 
 .slides {
-    overflow-y: scroll;
+    overflow-y: auto;
     text-align: center;
-    //background: rgba(231, 228, 221, 0.87);
-    background-color: $secondary;
-    color: $text_color;
+    color: var(--text-color);
+    background-color: var(--content-background-color);  
     height: calc(100vh - 38px);
     display: flex;
     flex-direction: column;
@@ -25,6 +28,7 @@ body {
 
     .active {
         background: rgba(255, 255, 0, 0.288);
+        //background-color: var(--hover-icon-background-color);
     }
 }
 
@@ -35,4 +39,11 @@ body {
         padding: 0px;
         margin: 0px;
     }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
