@@ -59,6 +59,18 @@ label {
     }
 }
 
+.btn-secondary, .btn-danger {
+    width: 100px;
+    svg {
+        fill: white;
+    }
+}
+
+.operations {
+    display: flex;
+    flex-direction: row;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

@@ -1,4 +1,4 @@
-var requests = new RequestMaker( API_URL );
+var requests = new RequestMaker(API_URL);
 new PresentationView();
 
 /**
@@ -13,13 +13,13 @@ async function connectToReceptor() {
     $('#loading').html('Conectando... <img style="width: 42px;" src="assets/img/animation_200_knsyj8ts.gif">')
     $('#loading').attr('Title', 'Conectando-se ao receptor')
 
-    setTimeout(function() {
-        $('#loading').html('Conectando... <img style="width: 35px;" src="assets/img/animation_200_knsylo42.gif">');
-    }, 3000);
+    // setTimeout(function() {
+    //     $('#loading').html('Conectando... <img style="width: 35px;" src="assets/img/animation_200_knsylo42.gif">');
+    // }, 3000);
 
-    setTimeout(function() {
-        $('#loading').html('Conectado');
-    }, 4600)
+    // setTimeout(function() {
+    //     $('#loading').html('Conectado');
+    // }, 4600)
 
     try {
         receptorIp = await requests.getReceptorIp();
@@ -28,19 +28,19 @@ async function connectToReceptor() {
         //$('#loading').attr('Title', 'Conectado ao receptor')
         $('#loading').attr('Title', 'Conectado ao receptor: ' + receptorIp)
     }
-    catch(e) {
+    catch (e) {
         //alert(e.responseJSON.message);
         $('#loading').html('Desconectado');
         $('#loading').attr('Title', 'Tentar novamente')
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     connectToReceptor();
 })
 
-$('#loading').click(function() {
-    if(!receptorIp) {
+$('#loading').click(function () {
+    if (!receptorIp) {
         connectToReceptor();
     }
 })

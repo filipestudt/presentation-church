@@ -13,6 +13,26 @@
 
 <body>
     <div class="container d-flex flex-column theme-light" id="main">
+        <label>Operações</label>
+        <span id="operations">
+            <div class="btn btn-secondary" id="btn-refresh" title="Recarrega esse programa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                        d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z" />
+                </svg>
+                Recarregar
+            </div>
+            <div class="btn btn-danger" id="btn-poweroff" title="Desliga o receptor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                        d="M6.265 3.807l1.147 1.639a8 8 0 1 0 9.176 0l1.147-1.639A9.988 9.988 0 0 1 22 12c0 5.523-4.477 10-10 10S2 17.523 2 12a9.988 9.988 0 0 1 4.265-8.193zM11 12V2h2v10h-2z" />
+                </svg>
+                Desligar
+            </div>
+        </span>
+
         <label>IP Fixo</label>
         <span class="hr"></span>
         <div class="btn-toggle"></div>
@@ -30,7 +50,10 @@
             <option>Negrito</option>
         </select>
 
-        <label>Cor do texto(hexadecimal, ex: #ffffff)</label>
+
+
+
+        <!-- <label>Cor do texto(hexadecimal, ex: #ffffff)</label> -->
 
         <!-- 
         <span class="hr"></span>

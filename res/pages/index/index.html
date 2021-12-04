@@ -54,13 +54,13 @@
             </div>
 
             <div class="flex-row right align-items-center">
-                <div id="theme">
+                <!-- <div id="theme">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path fill="none" d="M0 0h24v24H0z" />
                         <path
                             d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z" />
                     </svg>
-                </div>
+                </div> -->
 
                 <div id="loading"></div>
             </div>
@@ -196,12 +196,32 @@
                 </div>
 
                 <div id="presentations-wrapper">
-                    <p>Hinos</p>
+                    <span id="favorites-order" class="hide">
+                        <p id="favorites-title">Favoritos</p>
+                        <!-- <span>Ordem</span> -->
+                        <span id="favorites-order-commands">
+                            <span id="favorites-order-button-up">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z" />
+                                </svg>
+                            </span>
+                            <span id="favorites-order-button-down">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M13 16.172l5.364-5.364 1.414 1.414L12 20l-7.778-7.778 1.414-1.414L11 16.172V4h2v12.172z" />
+                                </svg>
+                            </span>
+                        </span>
+
+                    </span>
                     <select id="categories">
                         <option value="Hinos">Hinos</option>
                         <option value="HCC">HCC</option>
                         <option value="CC">CC</option>
-                        <option value="Favoritos">Favoritos</option>
+                        <!-- <option value="Favoritos">Favoritos</option> -->
                     </select>
                     <span class="divider"></span>
                     <div id="presentation-list">
@@ -235,6 +255,7 @@
 
     <script src="src/view/presentation-view.js"></script>
     <script src="src/controller/presentation-controller.js"></script>
+    <script src="src/controller/favorites-controller.js"></script>
 
     <script src="src/main.js"></script>
 </body>

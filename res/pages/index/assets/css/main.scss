@@ -111,7 +111,7 @@
     iframe {
         position: absolute;
         z-index: 100;
-        width: calc(100vw - 220px);
+        width: calc(100vw - 218px);
         height: calc(100vh - 78px - 50px);
         border-radius: var(--border-radius);
     }
@@ -183,7 +183,19 @@
 
         select {
             @include title();
-            display: none;
+            // display: none;
+            border: none;
+            margin: 20px 20px;
+        }
+
+        #favorites-order {
+           
+
+            #favorites-order-commands {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
         }
 
         #presentation-list {

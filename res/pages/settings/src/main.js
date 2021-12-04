@@ -69,4 +69,12 @@ $('#btn-save').click(function (e) {
     }
 })
 
+$('#btn-poweroff').click(function (e) {
+    window.top.postMessage('poweroff', '*');
+})
+
+$('#btn-refresh').click(function (e) {
+    window.top.postMessage('refresh', '*');
+})
+
 //localStorage.setItem('config',JSON.stringify({fontSize: 33}))

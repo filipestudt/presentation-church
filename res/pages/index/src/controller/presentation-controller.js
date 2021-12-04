@@ -93,4 +93,18 @@ function PresentationController() {
 
         $('.powerpoint input').val('');
     }
+
+    this.poweroff = async function () {
+        try {
+            await requests.poweroff();
+        }
+        catch (e) {
+            if (e.statusText == 'error') {
+                alert('Erro inesperado. Verifique se o receptor está ligado e conectado.');
+            }
+            else {
+                alert(e);
+            }
+        }
+    }
 }

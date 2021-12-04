@@ -129,4 +129,13 @@ function RequestMaker(urlParam) {
             error: (data) => `Error: ${data}`
         })
     }
+
+    this.poweroff = function () {
+        return $.ajax({
+            type: 'GET',
+            url: 'http://' + receptorIp + ':' + RECEPTOR_PORT + '/commands/poweroff',
+            success: (data) => data,
+            error: (data) => `Error: ${data}`
+        });
+    }
 }

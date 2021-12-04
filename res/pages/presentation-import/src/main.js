@@ -23,11 +23,16 @@ $('#save').click(async function () {
     if (id) {
         try {
             await requestMaker.put(result);
-            window.opener.postMessage('saved', '*');
+            window.top.postMessage('saved', '*');
             window.close();
         }
         catch (e) {
-            alert(e.responseJSON.message);
+            if (e && e.responseJSON && e.responseJSON.message) {
+                alert(e.responseJSON.message);
+            }
+            else {
+                console.log(e);
+            }
         }
     } else {
         try {

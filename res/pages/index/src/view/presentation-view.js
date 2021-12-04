@@ -1,5 +1,7 @@
 function PresentationView() {
     var controller = new PresentationController();
+    var favoritesController = new FavoritesController();
+    favoritesController.check();
 
     /*
      * Elementos da tela
@@ -15,21 +17,40 @@ function PresentationView() {
      * Carrega todas as apresentações e seta na tela
      * Usa o valor do select de categorias
      */
-    var load = async function () {
+    var load = async function (maintainSelected = false) {
         let value = categoriesElement.val();
         var data = await controller.load(value);
         // Sort alphabetically
         data.sort((a, b) => a.name.localeCompare(b.name));
         // Carrega em tela 
-        setPresentations(data);
+        let selected;
+        if (maintainSelected) {
+            selected = getSelected();
+        }
+        setPresentations(data, selected);
     }
 
-    var getFavorites = async function () {
+    var getFavorites = async function (maintainSelected = false) {
         let data = await controller.getFavorites();
-        setPresentations(data.reverse());
+        let order = favoritesController.get();
+        let dataToDisplay = [];
+
+        for (let item of data) {
+            let pos = order.indexOf(item.id);
+            dataToDisplay[pos] = item;
+        }
+
+        console.log(dataToDisplay)
+
+        // setPresentations(data.reverse());
+        let selected;
+        if (maintainSelected) {
+            selected = getSelected();
+        }
+        setPresentations(dataToDisplay, selected);
     }
 
-    var setPresentations = function (data) {
+    var setPresentations = function (data, maintainSelected = null) {
         /**
          * Limpa a view e a lista das apresentações
          */
@@ -41,7 +62,16 @@ function PresentationView() {
                 <span id="${obj.id}" class="presentation list-group-item">${obj.name}</span>`)
         }
 
-        select($('.presentation')[0]);
+        if (maintainSelected) {
+            for (let i = 0; i < $('.presentation').length; i++) {
+                if ($('.presentation')[i].id == maintainSelected) {
+                    select($('.presentation')[i]);
+                    break;
+                }
+            }
+        } else {
+            select($('.presentation')[0]);
+        }
     }
 
     var getSelected = function () {
@@ -130,7 +160,10 @@ function PresentationView() {
         $('.remove-favorite').addClass('hide');
         $('.remove').removeClass('hide');
         $('.favorite').removeClass('hide');
-        load();
+        $('#favorites-order').addClass('hide');
+        $('#categories').removeClass('hide');
+        let maintainSelected = true;
+        load(maintainSelected);
     })
 
     $('.new').click(function () {
@@ -211,6 +244,7 @@ function PresentationView() {
 
         try {
             await controller.setAsFavorite(id);
+            favoritesController.add(id);
             alert('Favoritado');
         }
         catch (e) { }
@@ -226,6 +260,7 @@ function PresentationView() {
 
         try {
             await controller.removeFavorite(id);
+            favoritesController.remove(id);
             alert('Removido');
             getFavorites();
         }
@@ -282,6 +317,8 @@ function PresentationView() {
         $('.remove-favorite').removeClass('hide');
         $('.remove').addClass('hide');
         $('.favorite').addClass('hide');
+        $('#favorites-order').removeClass('hide');
+        $('#categories').addClass('hide');
         getFavorites();
     })
 
@@ -296,6 +333,31 @@ function PresentationView() {
         }
     })
 
+    $('#favorites-order-button-up').click(function () {
+        let id = getSelected();
+
+        if (!id) {
+            alert('Nenhum apresentação selecionada');
+            return;
+        }
+
+        favoritesController.up(id);
+        let maintainSelected = true;
+        getFavorites(maintainSelected);
+    })
+
+    $('#favorites-order-button-down').click(function () {
+        let id = getSelected();
+
+        if (!id) {
+            alert('Nenhum apresentação selecionada');
+            return;
+        }
+
+        favoritesController.down(id);
+        let maintainSelected = true;
+        getFavorites(maintainSelected);
+    })
     /**
      * Evento do tipo "on", para aplicar a todas as apresentações,
      * já que elas são dinâmicas dependendo da categoria selecionada
@@ -311,7 +373,17 @@ function PresentationView() {
     // Recebe uma mensagem do manager pra recarregar a página quando uma nova apresentação tiver sido
     // criada ou editada
     window.addEventListener("message", (event) => {
-        load();
+        switch (event.data) {
+            // case 'saved':
+            //     load(true);
+            //     break;
+            case 'poweroff':
+                controller.poweroff();
+                break;
+            case 'refresh':
+                location.reload();
+                break;
+        }
     }, false);
 
     /*

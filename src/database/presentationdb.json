@@ -18018,13 +18018,7 @@
           "num": "1",
           "slides": [
             "Uma palavra perdida já quase esquecida me fez relembrar",
-            "Contendo sete letrinhas e todas juntinhas se lê cativar\n"
-          ]
-        },
-        {
-          "num": "C",
-          "slides": [
-            "Cativar é amar, e também carregar, um pouquinho da dor que alguém tem pra levar",
+            "Contendo sete letrinhas e todas juntinhas se lê cativar\n[C]\nCativar é amar, e também carregar, um pouquinho da dor que alguém tem pra levar",
             "Cativou disse alguém laços fortes criou",
             "Responsável tu és, pelo que cativou\n"
           ]
@@ -40384,7 +40378,8 @@
           ]
         }
       ],
-      "id": "DRXvDNaKs"
+      "id": "DRXvDNaKs",
+      "isFavorite": false
     },
     {
       "name": "A Cada Momento",
@@ -40411,7 +40406,8 @@
           ]
         }
       ],
-      "id": "BklYrvWoo"
+      "id": "BklYrvWoo",
+      "isFavorite": true
     },
     {
       "name": "A começar em mim",
@@ -40461,7 +40457,7 @@
         }
       ],
       "id": "ziqW-pmMq",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "name": "A minha é do Mestre",
@@ -40516,7 +40512,8 @@
           ]
         }
       ],
-      "id": "VDk6I8gim"
+      "id": "VDk6I8gim",
+      "isFavorite": false
     },
     {
       "name": "Abre Senhor",
@@ -40754,7 +40751,8 @@
           ]
         }
       ],
-      "id": "pIZCi6uUw"
+      "id": "pIZCi6uUw",
+      "isFavorite": false
     },
     {
       "name": "Ao Erguermos as Mãos",
@@ -43977,33 +43975,33 @@
       "id": "HmsBIxs3Y"
     },
     {
-      "name": "1 - Novo Hino",
+      "name": "1 - Novo Hinoeeeee",
       "category": "Hinos",
       "content": [
         {
           "num": "1",
           "slides": [
-            "\nADsadsadsa\ndasdsad",
+            "ADsadsadsa\ndasdsad",
             "ad"
           ]
         },
         {
           "num": "2",
           "slides": [
-            "\ndasdas\n"
+            "dasdas\n"
           ]
         },
         {
           "num": "3",
           "slides": [
-            "\ndasdasd",
+            "dasdasd",
             "dasdasdasd\ndasdasdas",
             "aaaa"
           ]
         }
       ],
       "id": "lRXBYQ0aw",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "name": "2 - novo hino",
@@ -44085,7 +44083,7 @@
         }
       ],
       "id": "mFuYqcQZY",
-      "isFavorite": false
+      "isFavorite": true
     },
     {
       "name": "1-Coro maisucolo ed",
@@ -44100,7 +44098,7 @@
         }
       ],
       "id": "xGXPoOFkV",
-      "isFavorite": true
+      "isFavorite": false
     },
     {
       "name": "1-novo teste coro maisucolo",
@@ -44147,11 +44145,12 @@
         {
           "num": "c",
           "slides": [
-            "dasdsadsa"
+            "dasdsadsas"
           ]
         }
       ],
-      "id": "nEfB284sI"
+      "id": "nEfB284sI",
+      "isFavorite": false
     },
     {
       "name": "1-B",
@@ -44160,7 +44159,7 @@
         {
           "num": "1",
           "slides": [
-            "dassadasdas"
+            "dassadasdasssseeee"
           ]
         }
       ],
@@ -44189,7 +44188,8 @@
           ]
         }
       ],
-      "id": "CIchKuYd8"
+      "id": "CIchKuYd8",
+      "isFavorite": false
     },
     {
       "name": "1 - Novo Hino44",
