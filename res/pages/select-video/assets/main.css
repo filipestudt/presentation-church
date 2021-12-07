@@ -1,0 +1,1 @@
+body{margin:0px;padding:0px;overflow:auto}#main{background-color:var(--content-background-color);font-family:var(--font-family);padding:20px}#main .flex-center{display:flex;flex-direction:column;align-items:center}#main .flex-center img{width:300px;margin-bottom:30px}#main .go-back{font-size:20pt;cursor:pointer}

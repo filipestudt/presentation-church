@@ -52,7 +52,15 @@ $('.btn-toggle').click(function (e) {
 })
 
 $('#btn-save').click(function (e) {
-    var fontSize = !isNaN($('#font-size').val()) ? $('#font-size').val() : 60;
+    var val = $('#font-size').val();
+
+    if (isNaN(val) && data) {
+        $('#font-size').val(data.fontSize);
+    } else if (isNaN(val)) {
+        $('#font-size').val(60);
+    }
+
+    var fontSize = $('#font-size').val();
     var staticIp = $('#ip').attr('disabled') ? false : true;
     var ip = $('#ip').val();
 
@@ -62,20 +70,20 @@ $('#btn-save').click(function (e) {
         ip
     }
 
-    localStorage.setItem('config', JSON.stringify(newData));
-
     if (newData.fontSize != data.fontSize) {
-        socket.emit('font-size', fontSize);
-    }
-
-    if (isNaN($('#font-size').val())) {
-        $('#font-size').val(data.fontSize || 60);
+        try {
+            socket.emit('font-size', fontSize);
+        }
+        catch (err) { console.log(err) }
     }
 
     // send ip
     if (staticIp) {
         window.top.postMessage(ip, '*');
     }
+
+    localStorage.setItem('config', JSON.stringify(newData));
+    data = newData;
 })
 
 $('#btn-poweroff').click(function (e) {
@@ -85,5 +93,3 @@ $('#btn-poweroff').click(function (e) {
 $('#btn-refresh').click(function (e) {
     window.top.postMessage('refresh', '*');
 })
-
-//localStorage.setItem('config',JSON.stringify({fontSize: 33}))

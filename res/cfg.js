@@ -1,7 +1,9 @@
 const SERVER_PORT = 3013;
 const RECEPTOR_PORT = 3000;
 const API_BASE_URL = 'http://localhost:' + SERVER_PORT;
+const API_PRESENTATIONS_URL = 'http://localhost:' + SERVER_PORT + '/presentations';
 const API_URL = 'http://localhost:' + SERVER_PORT + '/presentations';
+const API_VIDEOS_URL = 'http://localhost:' + SERVER_PORT + '/videos';
 const RECEPTOR_URL = 'http://localhost:' + SERVER_PORT + '/receptor';
 const PRESENTATION_MANAGER_URL = '../presentation-manager/index.html';
 const PRESENTATION_CONTROLLER_URL = '../presentation-controller/index.html'

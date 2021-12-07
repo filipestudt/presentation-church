@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../../assets/css/base.css">
+	<link rel="stylesheet" href="../../assets/css/light-theme.css">
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/main.css">
+</head>
+
+<body>
+	<div id="main" class="theme-light">
+		<span class="go-back">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				<path fill="none" d="M0 0h24v24H0z" />
+				<path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" />
+			</svg>
+			Voltar
+		</span>
+		<div class="flex-center">
+			<p id="video-name"></p>
+			<img id="thumbnail">
+			<div class="btn btn-primary">Selecionar</div>
+		</div>
+	</div>
+	<script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+	<script src="../../jquery-3.4.1.min.js"></script>
+	<script src="../../cfg.js"></script>
+	<script src="../../get-url-params.js"></script>
+	<script src="../../assets/js/socket.io.js"></script>
+	<script src="src/request.js"></script>
+	<script src="src/main.js"></script>
+</body>
+
+</html>

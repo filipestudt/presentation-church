@@ -320,6 +320,19 @@ function PresentationView() {
         let maintainSelected = true;
         getFavorites(maintainSelected);
     })
+
+    $('.select-video').click(function () {
+        let id = getSelected();
+
+        if (!id) {
+            alert('Nenhum apresentação selecionada');
+            return;
+        }
+
+        openUrlOnIframe(SELECT_VIDEO, id);
+    })
+
+
     /**
      * Evento do tipo "on", para aplicar a todas as apresentações,
      * já que elas são dinâmicas dependendo da categoria selecionada
@@ -344,6 +357,9 @@ function PresentationView() {
                 break;
             case 'refresh':
                 location.reload();
+                break;
+            case 'go-back':
+                $('#iframe').addClass('hide');
                 break;
             default:
                 if (event.data.includes('.')) {
