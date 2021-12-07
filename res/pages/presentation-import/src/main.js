@@ -3,6 +3,8 @@ const API_URL = 'http://localhost:' + SERVER_PORT + '/presentations';
 var requestMaker = new RequestMaker(API_URL);
 
 var id = GetURLParameter('id');
+var ip = GetURLParameter('ip');
+
 if (id) {
     load();
 }

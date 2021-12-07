@@ -46,8 +46,6 @@ function PresentationController() {
             return pres;
         }
 
-        console.log(pres)
-
         if (!pres.content) {
             return null;
         }

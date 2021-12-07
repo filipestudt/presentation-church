@@ -146,6 +146,12 @@ function PresentationView() {
         setPresentations(result);
     }
 
+    var openUrlOnIframe = function (url, id = null) {
+        var idParam = id ? '&id=' + id : '';
+        $('#iframe').attr('src', url + '?ip=' + receptorIp + idParam);
+        $('#iframe').removeClass('hide');
+    }
+
     /**
      * Events listeners
      *
@@ -166,21 +172,6 @@ function PresentationView() {
         load(maintainSelected);
     })
 
-    $('.new').click(function () {
-        window.open(PRESENTATION_MANAGER_URL);
-    })
-
-    $('.edit').click(function () {
-        let id = getSelected();
-
-        if (!id) {
-            alert('Nenhum apresentação selecionada');
-            return;
-        }
-
-        window.open(PRESENTATION_MANAGER_URL + '?id=' + id);
-    })
-
     $('.presentate').click(async function () {
         let id = getSelected();
 
@@ -189,9 +180,7 @@ function PresentationView() {
             return;
         }
 
-        //window.open(PRESENTATION_CONTROLLER_URL + '?id=' + id + '&ip=' + receptorIp);
-        $('#iframe').attr('src', PRESENTATION_CONTROLLER_URL + '?id=' + id + '&ip=' + receptorIp);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(PRESENTATION_CONTROLLER_URL, id);
     })
 
     $('.remove').click(async function () {
@@ -216,9 +205,7 @@ function PresentationView() {
     })
 
     $('.import').click(function () {
-        //window.open(IMPORT_URL);
-        $('#iframe').attr('src', IMPORT_URL);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(IMPORT_URL);
     })
 
     $('.edit2').click(function () {
@@ -229,9 +216,7 @@ function PresentationView() {
             return;
         }
 
-        //window.open(IMPORT_URL + '?id=' + id);
-        $('#iframe').attr('src', IMPORT_URL + '?id=' + id);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(IMPORT_URL, id);
     })
 
     $('.favorite').click(async function () {
@@ -267,39 +252,16 @@ function PresentationView() {
         catch (e) { }
     })
 
-    $('.see').click(function () {
-        if ($(this).attr('class').includes('active')) {
-            $(this).removeClass('active');
-            controller.closeSlides();
-        }
-        else {
-            $(this).addClass('active')
-            controller.openSlides();
-        }
-    })
-
-    $('#powerpoint').click(function () {
-        $('.powerpoint input').click();
-    })
-
-    $('.powerpoint input').change(function () {
-        controller.openPowerPoint(this.files[0])
-    })
-
     $('.gallery').click(function () {
-        //window.open(GALLERY_URL + '?ip=' + receptorIp);
-        $('#iframe').attr('src', GALLERY_URL + '?ip=' + receptorIp);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(GALLERY_URL);
     })
 
     $('.bible').click(function () {
-        $('#iframe').attr('src', BIBLE_URL + '?ip=' + receptorIp);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(BIBLE_URL);
     })
 
     $('.settings').click(function () {
-        $('#iframe').attr('src', SETTINGS_URL + '?ip=' + receptorIp);
-        $('#iframe').removeClass('hide');
+        openUrlOnIframe(SETTINGS_URL);
     })
 
     $('#search').keypress(function (evt) {
@@ -383,6 +345,10 @@ function PresentationView() {
             case 'refresh':
                 location.reload();
                 break;
+            default:
+                if (event.data.includes('.')) {
+                    receptorIp = event.data;
+                }
         }
     }, false);
 

@@ -52,10 +52,14 @@ $('.btn-toggle').click(function (e) {
 })
 
 $('#btn-save').click(function (e) {
+    var fontSize = !isNaN($('#font-size').val()) ? $('#font-size').val() : 60;
+    var staticIp = $('#ip').attr('disabled') ? false : true;
+    var ip = $('#ip').val();
+
     let newData = {
-        fontSize: !isNaN($('#font-size').val()) ? $('#font-size').val() : 60,
-        staticIp: $('#ip').attr('disabled') ? false : true,
-        ip: $('#ip').val()
+        fontSize,
+        staticIp,
+        ip
     }
 
     localStorage.setItem('config', JSON.stringify(newData));
@@ -66,6 +70,11 @@ $('#btn-save').click(function (e) {
 
     if (isNaN($('#font-size').val())) {
         $('#font-size').val(data.fontSize || 60);
+    }
+
+    // send ip
+    if (staticIp) {
+        window.top.postMessage(ip, '*');
     }
 })
 

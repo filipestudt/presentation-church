@@ -8,7 +8,7 @@ var view = new View();
 var id = GetURLParameter('id');
 var ip = GetURLParameter('ip');
 
-(async function() {
+(async function () {
     var pres = await requestMaker.getById(id);
     controller.init(pres.content, ip);
 }())
