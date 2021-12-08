@@ -6,6 +6,15 @@ function RequestMaker(urlParam) {
 		async: true
 	});
 
+	this.get = function () {
+		return $.ajax({
+			type: 'GET',
+			url: URL_BASE,
+			success: (data) => data,
+			error: (data) => `Error: ${data}`
+		});
+	}
+
 	this.getById = function (id) {
 		return $.ajax({
 			type: 'GET',

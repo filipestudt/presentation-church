@@ -23,5 +23,24 @@ body {
     .go-back{
         font-size: 20pt;
         cursor: pointer;
+        position: absolute;
+        left: 0;
+        margin-left: 20px;
+    }
+
+    .videos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .close-videos-select {
+            font-size: 20pt;
+            cursor: pointer;
+        }
+
+        img {
+            width: 340px;
+            height: 200px;
+        }
     }
 }

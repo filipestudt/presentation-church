@@ -11,17 +11,30 @@
 
 <body>
 	<div id="main" class="theme-light">
-		<span class="go-back">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-				<path fill="none" d="M0 0h24v24H0z" />
-				<path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" />
-			</svg>
-			Voltar
-		</span>
-		<div class="flex-center">
+		<div class="flex-center selected">
+			<span class="go-back">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" />
+				</svg>
+				Voltar
+			</span>
 			<p id="video-name"></p>
 			<img id="thumbnail">
-			<div class="btn btn-primary">Selecionar</div>
+			<div class="btn btn-primary" id="btn-select">Selecionar</div>
+		</div>
+		<div class="videos">
+			<span class="close-videos-select">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path
+						d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+				</svg>
+				Fechar
+			</span>
+			<span class="videos-list">
+
+			</span>
 		</div>
 	</div>
 	<script>
