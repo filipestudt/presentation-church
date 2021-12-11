@@ -93,3 +93,7 @@ $('#btn-poweroff').click(function (e) {
 $('#btn-refresh').click(function (e) {
     window.top.postMessage('refresh', '*');
 })
+
+$('#btn-videos').click(function () {
+    window.top.postMessage('open-videos', '*');
+})

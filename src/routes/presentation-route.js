@@ -10,7 +10,7 @@ router.get('/category/:category', controller.getByCategory);
 router.get('/setAsFavorite/:id', controller.setAsFavorite);
 router.get('/removeFavorite/:id', controller.removeFavorite);
 router.post('/', controller.post);
-router.put('/', controller.put);
+router.put('/:id', controller.put);
 router.delete('/', controller.delete);
 
 module.exports = router;

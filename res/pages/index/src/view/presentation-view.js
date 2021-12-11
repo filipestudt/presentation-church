@@ -332,7 +332,6 @@ function PresentationView() {
         openUrlOnIframe(SELECT_VIDEO, id);
     })
 
-
     /**
      * Evento do tipo "on", para aplicar a todas as apresentações,
      * já que elas são dinâmicas dependendo da categoria selecionada
@@ -360,6 +359,12 @@ function PresentationView() {
                 break;
             case 'go-back':
                 $('#iframe').addClass('hide');
+                break;
+            case 'go-back-to-settings':
+                $('.settings').click();
+                break;
+            case 'open-videos':
+                openUrlOnIframe(VIDEOS);
                 break;
             default:
                 if (event.data.includes('.')) {

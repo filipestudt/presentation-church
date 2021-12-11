@@ -118,7 +118,9 @@ exports.put = async (req, res, next) => {
         await repository.update(data.id, {
             name: data.name,
             category: data.category,
-            content: data.content
+            content: data.content,
+            isFavorite: data.isFavorite,
+            video: data.video
         });
 
         res.status(200).send('Apresentação editada com sucesso');

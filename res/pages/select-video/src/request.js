@@ -23,4 +23,14 @@ function RequestMaker(urlParam) {
 			error: (data) => `Error: ${data}`
 		});
 	}
+
+	this.put = function (id, data) {
+		return $.ajax({
+			type: 'PUT',
+			data: data,
+			url: URL_BASE + '/' + id,
+			success: (data) => data,
+			error: (data) => `Error: ${data}`
+		});
+	}
 }
