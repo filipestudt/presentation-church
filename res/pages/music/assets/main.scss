@@ -1,0 +1,131 @@
+body {
+    margin: 0px;
+    padding: 0px;    
+    overflow: auto;
+}
+
+#main {    
+    background-color: var(--content-background-color);
+    font-family: var(--font-family);    
+
+    .title {
+        font-size: 23pt;
+        font-family: var(--font-family);
+        padding-top: 30px;
+        padding-left: 30px;
+    }        
+
+    .folder, .file {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px;
+        width: 100px;
+        height: 120px;
+        
+        span {
+            text-align: center;
+            word-wrap: break-word;
+            width: 100px;
+            height: 120px;
+        }
+    }
+
+    .file {
+        cursor: pointer;
+    }
+
+    .go-back {
+        cursor: pointer;
+        margin: 30px;
+    }
+
+    .music-controls {
+        background-color: var(--hover-icon-background-color);
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            width: 33%;
+        }
+
+        svg {
+            fill: white;
+        }    
+
+        .current-song {
+            color: white;
+            padding-left: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                padding: 0px 10px;
+            }
+        }
+
+        .volume {
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+
+            svg {
+                margin-right: 10px;
+            }
+
+            input {
+                transition: opacity .2s;
+                height: 6px;
+                border-radius: 5px;  
+                -webkit-transition: .2s;
+                -webkit-appearance: none;
+            }
+
+            input::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                width: 14px; /* Set a specific slider handle width */
+                height: 14px; /* Slider handle height */
+                background: rgb(104, 184, 216);
+                cursor: pointer; /* Cursor on hover */
+                border-radius: 50px;
+              }
+              
+            input::-moz-range-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                width: 14px; /* Set a specific slider handle width */
+                height: 14px; /* Slider handle height */
+                background: rgb(104, 184, 216);
+                cursor: pointer; /* Cursor on hover */
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .render-files {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        height: calc(100vh - 78px - 50px - 90px);
+    }
+}
