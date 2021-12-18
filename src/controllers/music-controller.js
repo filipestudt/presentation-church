@@ -17,12 +17,7 @@ exports.get = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
     try {
-        if (!req.body || req.body.length == 0) {
-            res.status(500).send('Inválido');
-            return;
-        }
-
-        var directories = req.body;
+       var directories = req.body.dir;
 
         var musicFolder = path.resolve(__dirname, '..', '..', 'music');
 

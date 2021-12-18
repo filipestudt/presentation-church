@@ -10,3 +10,4 @@ const BIBLE_URL = '../bible/index.html';
 const SETTINGS_URL = '../settings/index.html';
 const VIDEOS = '../videos/index.html';
 const SELECT_VIDEO = '../select-video/index.html';
+const MUSIC_URL = '../music/index.html';

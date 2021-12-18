@@ -31,12 +31,15 @@ $('#btn-save').click(async function () {
 })
 
 $('#btn-delete').click(async function () {
-    try {
-        await videosApi.delete(selectedVideo);
-        $('.close-videos-select').click();
-    }
-    catch (err) {
-        console.log(err);
+    if (confirm('Deseja relmente excluir o vídeo?')) {
+        try {
+            await videosApi.delete(selectedVideo);
+            $('.close-videos-select').click();
+        }
+        catch (err) {
+            console.log(err);
+        }
+        load();
     }
 })
 

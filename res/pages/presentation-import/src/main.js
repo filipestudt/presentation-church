@@ -7,6 +7,8 @@ var ip = GetURLParameter('ip');
 
 if (id) {
     load();
+} else {
+    $('#content').val('[1]\nEssa é uma estrofe\n\nEsse é um outro slide dessa estrofe\n[2]\nSegunda estrofe\n[c]\nEsse é um coro\n[3]\nTerceira estrofe');
 }
 
 $('#save').click(async function () {

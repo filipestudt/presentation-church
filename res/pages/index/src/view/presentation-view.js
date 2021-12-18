@@ -260,6 +260,10 @@ function PresentationView() {
         openUrlOnIframe(BIBLE_URL);
     })
 
+    $('.music').click(function () {
+        openUrlOnIframe(MUSIC_URL);
+    })
+
     $('.settings').click(function () {
         openUrlOnIframe(SETTINGS_URL);
     })
