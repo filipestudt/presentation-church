@@ -47,7 +47,7 @@ body {
         position: absolute;
         bottom: 0px;
         width: 100%;
-        height: 70px;
+        height: 90px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -68,13 +68,53 @@ body {
 
         .buttons {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            span {
-                padding: 0px 10px;
+            .song-bar {
+                width: 100%;
+
+                input {
+                    transition: opacity .2s;
+                    height: 6px;
+                    border-radius: 5px;  
+                    -webkit-transition: .2s;
+                    -webkit-appearance: none;
+                    width: 100%;
+                }
+
+                input::-webkit-slider-thumb {
+                    -webkit-appearance: none; /* Override default look */
+                    appearance: none;
+                    width: 14px; /* Set a specific slider handle width */
+                    height: 14px; /* Slider handle height */
+                    background: rgb(104, 184, 216);
+                    cursor: pointer; /* Cursor on hover */
+                    border-radius: 50px;
+                  }
+                  
+                input::-moz-range-thumb {
+                    -webkit-appearance: none; /* Override default look */
+                    appearance: none;
+                    width: 14px; /* Set a specific slider handle width */
+                    height: 14px; /* Slider handle height */
+                    background: rgb(104, 184, 216);
+                    cursor: pointer; /* Cursor on hover */
+                    border-radius: 50px;
+                }
             }
+
+            .flex-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            span {
+                padding: 2px 10px;
+            }           
         }
 
         .volume {

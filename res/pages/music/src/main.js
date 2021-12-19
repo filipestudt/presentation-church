@@ -1,14 +1,20 @@
-var ip = GetURLParameter('ip');
-var api = new RequestMaker(API_MUSIC_URL);
-var formats = 'mp3';
+const ip = GetURLParameter('ip');
+const api = new RequestMaker(API_MUSIC_URL);
+const player = new Player();
+const formats = 'mp3';
 var dir = [];
 
 $('.volume-muted-icon').hide();
 
 $(document).ready(async function () {
     var data = await api.get();
-
     render(data);
+
+    player.loadPreferences();
+    setVolumeIcon(player.isMuted());
+    setPlayIcon(player.isPlaying());
+    setCurrentSong(player.getCurrentSong());
+    $('#volume-input').val(player.getVolume());
 })
 
 $(document).on('click', '.go-back', function () {
@@ -20,15 +26,54 @@ $(document).on('click', '.folder', function () {
 });
 
 $(document).on('click', '.file', function () {
-    $('.current-song').html(this.id)
+    let currentSong = this.id;
+    player.setCurrentSong(currentSong)
+    setCurrentSong(currentSong);
     //TODO
     //socket to receptor to open vlc
 });
 
-$('.volume-button').click(function () {
-    $('.volume-icon').hide();
-    $('.volume-muted-icon').show();
+$('.play').click(function () {
+    player.togglePlay();
+    setPlayIcon(player.isPlaying());
 })
+
+$('.volume-button').click(function () {
+    player.toggleMute();
+    setVolumeIcon(player.isMuted());
+    //TODO
+    //socket to receptor to change volume
+})
+
+$('#volume-input').change(function () {
+    let volume = this.value;
+    player.setVolume(volume);
+})
+
+function setCurrentSong(songName) {
+    $('.current-song').html(songName);
+}
+
+function setPlayIcon(isPlaying) {
+    console.log(isPlaying)
+    if (isPlaying) {
+        $('.play-icon').show();
+        $('.pause-icon').hide();
+    } else {
+        $('.play-icon').hide();
+        $('.pause-icon').show();
+    }
+}
+
+function setVolumeIcon(isMuted) {
+    if (isMuted) {
+        $('.volume-icon').hide();
+        $('.volume-muted-icon').show();
+    } else {
+        $('.volume-icon').show();
+        $('.volume-muted-icon').hide();
+    }
+}
 
 async function openDir(toOpen) {
     dir.push(toOpen);
@@ -71,7 +116,7 @@ function render(data) {
                         <span>${e.substr(0, 20)}${e.length >= 20 ? '...' : ''}</span>
                     </span>
                 `);
-            } else  {
+            } else {
                 $('.render-files').append(`
                     <span class="file" id="${e}" title="${e}">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="60"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 2.003V2h10.998C20.55 2 21 2.455 21 2.992v18.016a.993.993 0 0 1-.993.992H3.993A1 1 0 0 1 3 20.993V8l6-5.997zM5.83 8H9V4.83L5.83 8zM11 4v5a1 1 0 0 1-1 1H5v10h14V4h-8z"/></svg>
