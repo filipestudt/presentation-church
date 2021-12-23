@@ -1,0 +1,14 @@
+{
+  "name": "presentation-church",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "keywords": [],
+  "author": "Filipe Studt",
+  "license": "ISC"
+}
