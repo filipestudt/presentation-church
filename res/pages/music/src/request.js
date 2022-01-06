@@ -52,4 +52,13 @@ function RequestMaker(urlParam) {
 			error: (data) => `Error: ${data}`
 		});
 	}
+
+	this.open = function () {
+		return $.ajax({
+			type: 'GET',
+			url: URL_BASE,
+			success: (data) => data,
+			error: (data) => `Error: ${data}`
+		});
+	}
 }

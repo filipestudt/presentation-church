@@ -6,6 +6,12 @@ exports.get = async (req, res, next) => {
         var musicFolder = path.resolve(__dirname, '..', '..', 'music');
 
         var data = fs.readdirSync(musicFolder);
+
+        data = data.sort((a, b) => {
+            let val = a.includes('.mp3') ? 2 : 1;
+            let val2 = b.includes('.mp3') ? 2 : 1;
+            return val - val2;
+        })
         res.status(200).send(data);
     }
     catch (e) {
@@ -17,7 +23,7 @@ exports.get = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
     try {
-       var directories = req.body.dir;
+        var directories = req.body.dir;
 
         var musicFolder = path.resolve(__dirname, '..', '..', 'music');
 
@@ -26,6 +32,11 @@ exports.post = async (req, res, next) => {
         }
 
         var data = fs.readdirSync(musicFolder);
+        data = data.sort((a, b) => {
+            let val = a.includes('.mp3') ? 2 : 1;
+            let val2 = b.includes('.mp3') ? 2 : 1;
+            return val - val2;
+        })
         res.status(200).send(data);
     }
     catch (e) {
