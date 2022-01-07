@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Wrapper, Svg, Icon } from './styles';
 import data from './data';
 
-function SideBar() {
+const SideBar: React.FC = () => {
   const [selected, setSelected] = useState();
 
   const handleClick = (e: any) => {
