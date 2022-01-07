@@ -12,6 +12,18 @@ export const get = async (req, res, next) => {
   }
 }
 
+export const getById = async (req, res, next) => {
+  try {
+    let data = await repository.getById(req.params.id);
+    res.status(200).send(data);
+  }
+  catch(err) {
+    res.status(500).send({
+      message: 'Unexpected error. ' + err
+    })
+  }
+}
+
 export const getByFolder = async (req, res, next) => {
   try {
     let data = await repository.getByFolder(req.params.folder);

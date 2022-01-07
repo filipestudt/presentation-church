@@ -11,9 +11,15 @@ export const get = () => {
   return db.value();
 }
 
+export const getById = (id: ISongDTO['id']) => {
+  return db.value().filter((song: ISongDTO) =>
+    song.id === id
+  );
+}
+
 export const getByFolder = (folderId: ISongDTO['folderId']) => {
   return db.value().filter((song: ISongDTO) =>
-    song.folderId == folderId
+    song.folderId === folderId
   );
 }
 
