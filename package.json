@@ -1,0 +1,28 @@
+{
+  "name": "presentation-church",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@sequelize/sqlite3": "^7.0.0-alpha.41",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
